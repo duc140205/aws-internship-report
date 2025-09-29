@@ -10,8 +10,12 @@ pre: " <b> 1.2. </b> "
 
 ### Mục tiêu tuần 2:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu và thực hành triển khai **Amazon EC2**: AMI, EBS, Instance Store, Metadata, Auto Scaling, Pricing.  
+* Nắm được kiến thức về **các dịch vụ Compute & Storage liên quan**: Lightsail, EFS, FSx, MGN và các trường hợp sử dụng thực tế.  
+* Thực hành triển khai EC2 instance và quản lý tài nguyên bằng **Tag & Resource Groups**.  
+* Làm quen và sử dụng **Amazon CloudWatch** để giám sát & logging.  
+* Thực hành triển khai ứng dụng với **Auto Scaling Group (ASG)** nhằm đảm bảo tính sẵn sàng và khả năng mở rộng.  
+* Tìm hiểu cơ chế **AWS Transit Gateway** trong kết nối mạng nhiều VPC.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |

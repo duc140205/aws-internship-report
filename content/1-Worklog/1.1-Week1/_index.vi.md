@@ -10,8 +10,13 @@ pre: " <b> 1.1. </b> "
 
 ### Mục tiêu tuần 1:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Làm quen với các thành viên trong chương trình **First Cloud Journey (FCJ)** và nắm được nội quy, quy định tại đơn vị thực tập.  
+* Hiểu khái niệm cơ bản về **điện toán đám mây** và hệ sinh thái dịch vụ AWS (Compute, Storage, Networking, Database, Security…).  
+* Thực hành khởi tạo và quản lý tài khoản AWS Free Tier theo **best practice**: IAM User, Group, Role; hạn chế dùng root account; thiết lập Budget theo dõi chi phí.  
+* Sử dụng song song **AWS Management Console** và **AWS CLI** để thao tác với tài nguyên, đồng thời làm quen với scripting để tự động hóa.  
+* Nắm cơ chế **tối ưu hóa chi phí**: Spot Instance, AWS Pricing Calculator, Budget/Cost Budget.  
+* Làm quen khái niệm **Serverless** (Lambda, DynamoDB) và công cụ **Hugo** để triển khai workshop/web tĩnh.  
+* Hiểu và thực hành cơ bản về **Networking trong AWS**: VPC, Subnet, Route Table, Security Group, NACL, IGW, NAT GW, VPC Endpoint, VPC Flow Logs, VPN, Direct Connect, Elastic Load Balancing.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
