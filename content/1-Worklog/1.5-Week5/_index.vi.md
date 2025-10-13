@@ -10,8 +10,12 @@ pre: " <b> 1.5. </b> "
 
 ### Mục tiêu tuần 5:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu rõ **kiến thức nền tảng về cơ sở dữ liệu (Database Concepts)** và sự khác biệt giữa **OLTP** và **OLAP**.  
+* Làm quen và thực hành với các **dịch vụ cơ sở dữ liệu trên AWS** như **Amazon RDS**, **Amazon Redshift**, và **Amazon ElastiCache**.  
+* Củng cố và nâng cao kỹ năng **SQL** từ cơ bản đến nâng cao.  
+* Nắm được **cách triển khai, quản lý và tối ưu** các dịch vụ Database trong môi trường AWS.  
+* Tổng hợp và liên kết kiến thức giữa **lý thuyết database truyền thống** và **ứng dụng thực tế trên nền tảng đám mây**.
+
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
