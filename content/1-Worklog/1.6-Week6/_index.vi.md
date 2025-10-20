@@ -5,54 +5,30 @@ weight: 1
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
 
 
 ### Mục tiêu tuần 6:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
-
+* Tiếp tục làm quen môi trường thực tập và công cụ hỗ trợ học AWS.  
+* Bắt đầu học khóa **AWS Fundamentals** trên Coursera để củng cố kiến thức nền tảng.  
+* Làm quen với **vẽ kiến trúc AWS trên draw.io** và nghiên cứu các **kiến trúc mẫu (RAG Chatbot, AI Agents)** từ tài liệu chính thức của AWS.  
+* Xây dựng **phiên bản kiến trúc đầu tiên** của dự án bằng **Amazon Q CLI** để chuẩn bị cho giai đoạn thực hành triển khai.
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Truy cập khóa học [AWS Fundamentals Specialization](https://www.coursera.org/programs/fptu-fall-2025-zmahp/specializations/aws-fundamentals) trên Coursera.                                                                                                                                                                                                             | 12/10/2025   | 12/10/2025      | Coursera                                                                                                                                                                                                                                         |
+| 3   | - Tham khảo video hướng dẫn AWS cơ bản trên YouTube <br>&emsp; [Video Series](https://www.youtube.com/watch?v=l8isyDe-GwY&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=2) <br> - Học cách **vẽ kiến trúc AWS trên draw.io** <br> - Đọc blog [Conversational Chatbots using Retrieval Augmented Generation on AWS](https://aws.amazon.com/vi/solutions/guidance/conversational-chatbots-using-retrieval-augmented-generation-on-aws/) | 13/10/2025   | 13/10/2025      | YouTube, AWS Blog  |
+| 4   | - Tham khảo kiến trúc về **AI Agents** <br>&emsp; [Advanced Multimodal Chatbot with Speech-to-Speech on AWS](https://aws.amazon.com/vi/solutions/guidance/advanced-multimodal-chatbot-with-speech-to-speech-on-aws/?did=sl_card&trk=sl_card) <br> - Thử sử dụng **RDS để deploy SQL Server DB local**                                                                      | 14/10/2025   | 14/10/2025      | AWS Solutions Library                                               |
+| 5   | - Tham gia sự kiện **WORKSHOP “DATA SCIENCE ON AWS” – MỞ KHÓA SỨC MẠNH DỮ LIỆU CÙNG ĐIỆN TOÁN ĐÁM MÂY** <br> - Ghi chú lại các nội dung chính trong buổi workshop liên quan đến **phân tích dữ liệu và pipeline ML trên AWS**                                                            | 15/10/2025   | 15/10/2025      | [FPT Workshop - Data Science on AWS](https://qhdn-hcmuni.fpt.edu.vn/2025/10/13/workshop-data-science-on-aws-mo-khoa-suc-manh-du-lieu-cung-dien-toan-dam-may/)    |
+| 6   | - Tạo **bản thiết kế kiến trúc đầu tiên (First Architecture Version)** bằng **Amazon Q CLI** <br> - Lưu và trình bày sơ đồ trên Notion để chuẩn bị review nội bộ nhóm                                                                                                                        | 16/10/2025   | 16/10/2025      | [Notion - Pre Architecture](https://www.notion.so/pre-archi-28fd23b23efb808b978dfb3f9a20389d?v=268d23b23efb8088ba76000ca96674ea&source=copy_link) |
 
 
 ### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Biết cách **vẽ và biểu diễn kiến trúc AWS bằng draw.io**.
+* Nắm được **cấu trúc và thành phần** của các kiến trúc chatbot sử dụng RAG và AI Agents.
+* Thử nghiệm kết nối **RDS với SQL Server local**, chuẩn bị cho việc triển khai cơ sở dữ liệu thực tế.
+* Tham dự **Workshop “Data Science on AWS”**, mở rộng hiểu biết về khai thác dữ liệu và pipeline ML trên AWS.
+* Hoàn thiện **phiên bản đầu tiên của kiến trúc dự án** bằng Amazon Q CLI và lưu trữ trên Notion.
 
 
