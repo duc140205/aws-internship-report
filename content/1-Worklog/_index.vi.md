@@ -20,7 +20,7 @@ pre: " <b> 1. </b> "
 
 **Tuần 6:** [AWS Fundamentals & Thiết kế kiến trúc đầu tiên bằng Amazon Q CLI](1.6-week6/)
 
-**Tuần 7:** [Làm công việc G...](1.7-week7/)
+**Tuần 7:** [Ôn tập kiểm tra giữa kỳ AWS, triển khai kiến trúc và thử nghiệm chatbot Text2SQL](1.7-week7/)
 
 **Tuần 8:** [Làm công việc H...](1.8-week8/)
 
