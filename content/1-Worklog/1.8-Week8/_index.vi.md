@@ -5,55 +5,33 @@ weight: 1
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
 
 
 ### Mục tiêu tuần 8:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Ôn tập kiến thức các dịch vụ AWS để chuẩn bị kiểm tra giữa kỳ.
+* Làm thử các bài quiz và đề thi mẫu nhằm củng cố lý thuyết và kỹ năng thực hành.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Tiếp tục ôn tập các dịch vụ AWS để kiểm tra giữa kì <br> - Làm thử các đề được AI tự gen ra để kiểm tra kiến thức                                                                         | 27/10/2025   | 27/10/2025      | Quiz tự tạo bằng AI, AWS Study Notes      |
+| 3   | - Tiếp tục ôn tập các dịch vụ AWS để kiểm tra giữa kì                                                                                                 | 28/10/2025   | 28/10/2025      | Quizlet / AWS Docs                        |
+| 4   | - Làm thử các bài quiz mẫu để củng cố kiến thức                                                                                                       | 22/10/2025   | 22/10/2025      | AWS Quiz Practice                         |
+| 5   | - Ôn tập kỹ lý thuyết qua Quizlet: [AWS Hotfix V10](https://quizlet.com/vn/1099628340/aws-hotfix-v10-flash-cards/?funnelUUID=e6969943-0cf6-481d-a9f1-72c54016d0c3) <br> - Làm thử đề [AWS Practitioner Practice Exam](https://github.com/kananinirav/AWS-Certified-Cloud-Practitioner-Notes/blob/master/practice-exam/practice-exam-1.md) <br> - Làm thử đề [AWS SAA-C03](https://github.com/Iamrushabhshahh/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Exam-Dump-With-Solution/blob/main/AWS%20Certified%20Solutions%20Architect%20Associate%20SAA-C03.pdf) <br> - Xem lại lý thuyết qua video [AWS Solutions Architect Associate Course](https://www.youtube.com/watch?v=CXU8D3kyxIc&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=29) | 23/10/2025   | 23/10/2025      | Quizlet / GitHub / YouTube                |
+| 6   | - Kiểm tra giữa kì                                                                                                                                    | 24/10/2025   | 24/10/2025      | AWS FCJ Midterm Test                      |
 
 
 ### Kết quả đạt được tuần 8:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Ôn tập lại toàn bộ các nhóm dịch vụ AWS:
+  * Compute, Storage, Networking, Database, Security, Monitoring...
+* Củng cố được kiến thức thông qua hệ thống câu hỏi trắc nghiệm, quiz và đề thi thử.
+* Nắm vững các khái niệm trọng tâm trong kỳ thi AWS Practitioner và SAA-C03.
+* Làm quen với cấu trúc và dạng câu hỏi trong đề thi thực tế.
+* Hoàn thành bài **kiểm tra giữa kỳ AWS** của chương trình First Cloud Journey.
+* Cải thiện khả năng nhận biết dịch vụ phù hợp cho từng tình huống cụ thể.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
 
 

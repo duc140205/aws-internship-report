@@ -22,7 +22,7 @@ pre: " <b> 1. </b> "
 
 **Tuần 7:** [Ôn tập kiểm tra giữa kỳ AWS, triển khai kiến trúc và thử nghiệm chatbot Text2SQL](1.7-week7/)
 
-**Tuần 8:** [Làm công việc H...](1.8-week8/)
+**Tuần 8:** [Ôn tập hệ thống kiến thức & hoàn thành kiểm tra giữa kỳ AWS First Cloud Journey](1.8-week8/)
 
 **Tuần 9:** [Làm công việc I...](1.9-week9/)
 
