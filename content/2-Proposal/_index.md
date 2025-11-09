@@ -5,111 +5,107 @@ weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
+# AI-Powered Booking Chatbot on AWS
+## AWS Serverless RAG-integrated solution for booking and customer care
 
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+### 1. Executive Summary  
+The AI-Powered Booking Chatbot on AWS is an intelligent chatbot solution designed to help users book appointments and look up service information via Facebook Messenger. The system combines Retrieval-Augmented Generation (RAG) with a SQL-driven model to handle natural conversations while retrieving accurate data from a PostgreSQL database. The platform uses an AWS Serverless architecture to reduce operational costs, scale automatically, and provide high reliability.
 
-### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
+### 2. Problem Statement  
+Current problem  
+Traditional booking systems often require manual or web-based interactions, lack natural conversational capabilities and contextual responses. Deploying AI chatbots can be complex without a flexible cloud platform to manage data, intents, and security.
 
-### 2. Problem Statement
-### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
+Solution  
+The project uses AWS Lambda, API Gateway, DynamoDB, PostgreSQL, and AI-supporting services to build a versatile chatbot capable of:
+  - Conversational intent analysis (booking, consultation, general questions).
+  - Connecting to databases to retrieve schedules, customer information, or analytical data.
+  - Supporting a RAG module for open-ended questions or complex contexts.
+  - Providing an Admin Dashboard to monitor conversation history, statistics, and system performance.
 
-### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+Benefits and ROI  
+The solution reduces operational costs (vs. on-premises), and creates a practical learning environment for students/research teams on AWS Serverless, NLP, and RAG. The system is reusable and extendable for SMBs in the future.
 
-### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+### 3. Solution Architecture  
+Overview:  
+The platform runs Serverless + VPC-secured, with all conversation processing, scheduling, and AI data handled by AWS Lambda and other serverless services.
 
-### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
+![Chatbot Architecture](/images/2-Proposal/chatbot_final_final.drawio.png)
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+Main data flow
+1. User chats via Facebook Messenger → API Gateway → Lambda WebhookReceiver.
+2. Lambda ChatOrchestrator handles intent and calls the Intent Model or RAG Module.
+3. DynamoDB stores conversation cache and metadata, while PostgreSQL stores booking records and history.
+4. EventBridge manages jobs to archive database records to S3 (e.g., daily archive) for the Admin Dashboard.
+5. Admin Dashboard (Route 53 + CloudFront + S3 + Cognito) allows admins to monitor, test, and manage the system.
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+AWS services used
+- AWS Lambda: conversation processing, intent orchestration, scheduling.
+- Amazon API Gateway: connects Messenger and the Admin Dashboard.
+- Amazon DynamoDB: cache, logs, and RAG metadata.
+- Amazon RDS (PostgreSQL): booking records and interaction history.
+- Amazon EventBridge: event management and cron jobs.
+- Amazon S3 + CloudFront + Route 53: hosting and distribution for the Admin UI.
+- Amazon Cognito: user management and admin authorization.
+- AWS Secrets Manager: secure storage for service credentials.
+- AWS Glue + Athena (optional analytics): extract and analyze conversation history data.
 
-### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
+### 4. Technical Deployment  
+Deployment stages  
+The project has two parts — the chatbot system and the AI Booking admin platform — each with four stages:
 
-### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+1. Research and architecture design  
+   - Analyze chatbot models integrating RAG and intent classification.  
+   - Propose an AWS Serverless architecture: Lambda, API Gateway, RDS PostgreSQL, DynamoDB, EventBridge.  
+   - Research CI/CD using AWS CDK or CloudFormation for automated deployments.  
+   - (Pre-workshop: prepare technical environment and architecture diagrams.)
 
-### 4. Technical Implementation
-**Implementation Phases**
-This project has two parts—setting up weather edge stations and building the weather platform—each following 4 phases:
-- Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
-- Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
-- Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).
-- Develop, Test, and Deploy: Code the Raspberry Pi setup, AWS services with CDK/SDK, and Next.js app, then test and release to production (Months 2-3).
+2. Cost estimation and feasibility checks  
+   - Use AWS Pricing Calculator to estimate infrastructure costs (Lambda, RDS, DynamoDB, Amplify, Cognito, EventBridge, S3, CloudFront).  
+   - Run small sandbox tests to validate scalability, response times, and stability.  
+   - (Early workshop: use results to tune resources and sizing.)
 
-**Technical Requirements**
-- Weather Edge Station: Sensors (temperature, humidity, rainfall, wind speed), a microcontroller (ESP32), and a Raspberry Pi as the edge device. Raspberry Pi runs Raspbian, handles Docker for filtering, and sends 1 MB/day per station via MQTT over Wi-Fi.
-- Weather Platform: Practical knowledge of AWS Amplify (hosting Next.js), Lambda (minimal use due to Next.js), AWS Glue (ETL), S3 (two buckets), IoT Core (gateway and rules), and Cognito (5 users). Use AWS CDK/SDK to code interactions (e.g., IoT Core rules to S3). Next.js reduces Lambda workload for the fullstack web app.
+3. Architecture refinement and optimization  
+   - Balance cost and performance: optimize Lambda counts, reduce RDS cost using caching with DynamoDB.  
+   - Implement conversation flow separation between "Booking" and "Customer Service" intents to reduce processing overhead.  
+   - Test scalability under concurrent users.  
+   - (Mid-workshop: ensure cost-effective and technically optimal system.)
 
-### 5. Timeline & Milestones
-**Project Timeline**
-- Pre-Internship (Month 0): 1 month for planning and old station review.
-- Internship (Months 1-3): 3 months.
-    - Month 1: Study AWS and upgrade hardware.
-    - Month 2: Design and adjust architecture.
-    - Month 3: Implement, test, and launch.
-- Post-Launch: Up to 1 year for research.
+4. Development, testing and deployment  
+   - Develop core Lambdas: WebhookReceiver, ChatOrchestrator, RAG Module; integrate RDS and DynamoDB.  
+   - Configure API Gateway, EventBridge, and Cognito; build the Admin UI with JavaScript.  
+   - End-to-end testing: Messenger → API Gateway → Chatbot → Database → Dashboard.  
+   - (End of workshop: put system into operation, record results and deliver final demo.)
 
-### 6. Budget Estimation
-You can find the budget estimation on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).  
-Or you can download the [Budget Estimation File](../attachments/budget_estimation.pdf).
+Technical requirements  
+- Core platform: AWS Serverless (Lambda, API Gateway, DynamoDB, RDS PostgreSQL, EventBridge).  
+- Security: Amazon Cognito, AWS Secrets Manager, segregated IAM Roles.  
+- Development: AWS CDK/SDK, JavaScript for the Admin UI.  
+- External integration: Facebook Messenger Webhook (API Gateway endpoint).  
+- Automation: CloudFormation templates.
 
-### Infrastructure Costs
-- AWS Services:
-    - AWS Lambda: $0.00/month (1,000 requests, 512 MB storage).
-    - S3 Standard: $0.15/month (6 GB, 2,100 requests, 1 GB scanned).
-    - Data Transfer: $0.02/month (1 GB inbound, 1 GB outbound).
-    - AWS Amplify: $0.35/month (256 MB, 500 ms requests).
-    - Amazon API Gateway: $0.01/month (2,000 requests).
-    - AWS Glue ETL Jobs: $0.02/month (2 DPUs).
-    - AWS Glue Crawlers: $0.07/month (1 crawler).
-    - MQTT (IoT Core): $0.08/month (5 devices, 45,000 messages).
+### 5. Roadmap & Milestones  
+- Internship period (Sep–Dec):  
+  - Sep: Learn AWS, solidify serverless architecture, build prototype.  
+  - Oct: Design and refine architecture.  
+  - Nov: Develop and test the system.  
+  - Dec: Deploy fully, demo and evaluate results.  
+- Post-deployment: further research and improvements over 12 months.
 
-Total: $0.7/month, $8.40/12 months
-
-- Hardware: $265 one-time (Raspberry Pi 5 and sensors).
+### 6. Budget Estimate  
+- Download the budget estimate report (PDF): [Budget Estimate - PDF](/images/2-Proposal/chatbotestimation.pdf)
 
 ### 7. Risk Assessment
-#### Risk Matrix
-- Network Outages: Medium impact, medium probability.
-- Sensor Failures: High impact, low probability.
-- Cost Overruns: Medium impact, low probability.
 
-#### Mitigation Strategies
-- Network: Local storage on Raspberry Pi with Docker.
-- Sensors: Regular checks and spares.
-- Cost: AWS budget alerts and optimization.
+| Risk | Impact | Probability | Mitigation |
+|---|---:|---:|---|
+| Messenger webhook outage | Medium | Medium | Implement retries & log monitoring via CloudWatch. |
+| Incorrect Lambda permissions | High | Low | Use dedicated IAM roles and perform least-privilege permission tests. |
+| DynamoDB data congestion | Medium | Low | Apply TTL limits and local caching. |
+| Cost overrun | Medium | Medium | Monitor AWS Billing Alerts and enable Budget notifications. |
 
-#### Contingency Plans
-- Revert to manual methods if AWS fails.
-- Use CloudFormation for cost-related rollbacks.
-
-### 8. Expected Outcomes
-#### Technical Improvements: 
-Real-time data and analytics replace manual processes.  
-Scalable to 10-15 stations.
-#### Long-term Value
-1-year data foundation for AI research.  
-Reusable for future projects.
+### 8. Expected Outcomes  
+- Technical: Deliver a working AI chatbot capable of booking via Messenger and responding to customer queries automatically.  
+- Academic: Workshop participants gain an understanding of designing AWS Serverless architectures integrated with RAG.  
+- Practical: Scale the model into an enterprise chatbot and combine conversation analytics with Glue & Athena.  
+- Long-term value: Lay the foundation for an internal Customer Service AI platform or a SaaS product.

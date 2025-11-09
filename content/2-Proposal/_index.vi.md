@@ -5,104 +5,131 @@ weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-Tại phần này, bạn cần tóm tắt các nội dung trong workshop mà bạn **dự tính** sẽ làm.
 
-# IoT Weather Platform for Lab Research  
-## Giải pháp AWS Serverless hợp nhất cho giám sát thời tiết thời gian thực  
+
+# AI-Powered Booking Chatbot on AWS
+## Giải pháp AWS Serverless tích hợp RAG cho đặt lịch và chăm sóc khách hàng
 
 ### 1. Tóm tắt điều hành  
-IoT Weather Platform được thiết kế dành cho nhóm *ITea Lab* tại TP. Hồ Chí Minh nhằm nâng cao khả năng thu thập và phân tích dữ liệu thời tiết. Nền tảng hỗ trợ tối đa 5 trạm thời tiết, có khả năng mở rộng lên 10–15 trạm, sử dụng thiết bị biên Raspberry Pi kết hợp cảm biến ESP32 để truyền dữ liệu qua MQTT. Nền tảng tận dụng các dịch vụ AWS Serverless để cung cấp giám sát thời gian thực, phân tích dự đoán và tiết kiệm chi phí, với quyền truy cập giới hạn cho 5 thành viên phòng lab thông qua Amazon Cognito.  
+AI-Powered Booking Chatbot on AWS là giải pháp chatbot thông minh được thiết kế nhằm hỗ trợ người dùng trong việc đặt lịch và tra cứu thông tin dịch vụ thông qua Facebook Messenger. Hệ thống kết hợp giữa cơ chế **RAG (Retrieval-Augmented Generation)** và **mô hình SQL-Driven** để vừa xử lý hội thoại tự nhiên, vừa truy xuất dữ liệu chính xác từ cơ sở dữ liệu PostgreSQL.
+ Nền tảng sử dụng kiến trúc **AWS Serverless** giúp giảm thiểu chi phí vận hành, tự động mở rộng, và đảm bảo độ tin cậy.   
 
 ### 2. Tuyên bố vấn đề  
 *Vấn đề hiện tại*  
-Các trạm thời tiết hiện tại yêu cầu thu thập dữ liệu thủ công, khó quản lý khi có nhiều trạm. Không có hệ thống tập trung cho dữ liệu hoặc phân tích thời gian thực, và các nền tảng bên thứ ba thường tốn kém và quá phức tạp.  
+Các hệ thống đặt lịch truyền thống thường yêu cầu thao tác thủ công hoặc web-based, thiếu khả năng trò chuyện tự nhiên và phản hồi theo ngữ cảnh. Việc triển khai chatbot AI có thể phức tạp nếu không có nền tảng đám mây linh hoạt để quản lý dữ liệu, intent, và bảo mật.
+
 
 *Giải pháp*  
-Nền tảng sử dụng AWS IoT Core để tiếp nhận dữ liệu MQTT, AWS Lambda và API Gateway để xử lý, Amazon S3 để lưu trữ (bao gồm data lake), và AWS Glue Crawlers cùng các tác vụ ETL để trích xuất, chuyển đổi, tải dữ liệu từ S3 data lake sang một S3 bucket khác để phân tích. AWS Amplify với Next.js cung cấp giao diện web, và Amazon Cognito đảm bảo quyền truy cập an toàn. Tương tự như Thingsboard và CoreIoT, người dùng có thể đăng ký thiết bị mới và quản lý kết nối, nhưng nền tảng này hoạt động ở quy mô nhỏ hơn và phục vụ mục đích sử dụng nội bộ. Các tính năng chính bao gồm bảng điều khiển thời gian thực, phân tích xu hướng và chi phí vận hành thấp.  
+Dự án áp dụng AWS Lambda, API Gateway, DynamoDB, PostgreSQL, và các dịch vụ hỗ trợ AI để tạo nên chatbot đa năng có khả năng:
+  - Phân tích intent hội thoại (đặt lịch, tư vấn, câu hỏi chung).
+  - Kết nối cơ sở dữ liệu để truy xuất lịch, thông tin khách hàng, hoặc dữ liệu phân tích.
+  - Hỗ trợ mô-đun RAG cho các câu hỏi mở hoặc ngữ cảnh phức tạp.
+  - Cung cấp giao diện quản trị (Admin Dashboard) giúp theo dõi lịch sử hội thoại, thống kê và hiệu năng hệ thống.
+ 
 
 *Lợi ích và hoàn vốn đầu tư (ROI)*  
-Giải pháp tạo nền tảng cơ bản để các thành viên phòng lab phát triển một nền tảng IoT lớn hơn, đồng thời cung cấp nguồn dữ liệu cho những người nghiên cứu AI phục vụ huấn luyện mô hình hoặc phân tích. Nền tảng giảm bớt báo cáo thủ công cho từng trạm thông qua hệ thống tập trung, đơn giản hóa quản lý và bảo trì, đồng thời cải thiện độ tin cậy dữ liệu. Chi phí hàng tháng ước tính 0,66 USD (theo AWS Pricing Calculator), tổng cộng 7,92 USD cho 12 tháng. Tất cả thiết bị IoT đã được trang bị từ hệ thống trạm thời tiết hiện tại, không phát sinh chi phí phát triển thêm. Thời gian hoàn vốn 6–12 tháng nhờ tiết kiệm đáng kể thời gian thao tác thủ công.  
+Giải pháp giúp tiết kiệm chi phí vận hành (so với hạ tầng on-premise), đồng thời tạo môi trường học tập thực tế cho sinh viên/nhóm nghiên cứu về AWS Serverless, NLP và RAG. Hệ thống có thể tái sử dụng và mở rộng để áp dụng cho các doanh nghiệp vừa và nhỏ trong tương lai.
+  
 
 ### 3. Kiến trúc giải pháp  
-Nền tảng áp dụng kiến trúc AWS Serverless để quản lý dữ liệu từ 5 trạm dựa trên Raspberry Pi, có thể mở rộng lên 15 trạm. Dữ liệu được tiếp nhận qua AWS IoT Core, lưu trữ trong S3 data lake và xử lý bởi AWS Glue Crawlers và ETL jobs để chuyển đổi và tải vào một S3 bucket khác cho mục đích phân tích. Lambda và API Gateway xử lý bổ sung, trong khi Amplify với Next.js cung cấp bảng điều khiển được bảo mật bởi Cognito.  
+**Mô tả tổng quan**:
+Nền tảng hoạt động theo mô hình Serverless + VPC-secured, trong đó toàn bộ xử lý hội thoại, lịch đặt, và dữ liệu AI đều chạy trên AWS Lambda và dịch vụ không máy chủ
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+![Chatbot Architecture](/images/2-Proposal/chatbot_final_final.drawio.png)
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+*Luồng dữ liệu chính*
+1. Người dùng trò chuyện qua Facebook Messenger → **API Gateway** → **Lambda WebhookReceiver**.
+
+2. **Lambda ChatOrchestrator** xử lý intent, gọi Intent Model hoặc RAG Module.
+
+3. **DynamoDB** lưu cache hội thoại và metadata, trong khi **PostgreSQL** lưu lịch sử và thông tin đặt lịch.
+
+4. **EventBridge** quản lý tác vụ lưu data sau 1 ngày đặt lịch trong db lại về s3 để phục vụ cho Dashboard Admin
+
+
+5. **Admin Dashboard** (Route 53 + Cloudfront + S3 + Cognito) giúp admin theo dõi, kiểm thử và quản lý hệ thống.
+
 
 *Dịch vụ AWS sử dụng*  
-- *AWS IoT Core*: Tiếp nhận dữ liệu MQTT từ 5 trạm, mở rộng lên 15.  
-- *AWS Lambda*: Xử lý dữ liệu và kích hoạt Glue jobs (2 hàm).  
-- *Amazon API Gateway*: Giao tiếp với ứng dụng web.  
-- *Amazon S3*: Lưu trữ dữ liệu thô (data lake) và dữ liệu đã xử lý (2 bucket).  
-- *AWS Glue*: Crawlers lập chỉ mục dữ liệu, ETL jobs chuyển đổi và tải dữ liệu.  
-- *AWS Amplify*: Lưu trữ giao diện web Next.js.  
-- *Amazon Cognito*: Quản lý quyền truy cập cho người dùng phòng lab.  
+- *AWS Lambda*: Xử lý hội thoại, điều phối intent, lập lịch.
 
-*Thiết kế thành phần*  
-- *Thiết bị biên*: Raspberry Pi thu thập và lọc dữ liệu cảm biến, gửi tới IoT Core.  
-- *Tiếp nhận dữ liệu*: AWS IoT Core nhận tin nhắn MQTT từ thiết bị biên.  
-- *Lưu trữ dữ liệu*: Dữ liệu thô lưu trong S3 data lake; dữ liệu đã xử lý lưu ở một S3 bucket khác.  
-- *Xử lý dữ liệu*: AWS Glue Crawlers lập chỉ mục dữ liệu; ETL jobs chuyển đổi để phân tích.  
-- *Giao diện web*: AWS Amplify lưu trữ ứng dụng Next.js cho bảng điều khiển và phân tích thời gian thực.  
-- *Quản lý người dùng*: Amazon Cognito giới hạn 5 tài khoản hoạt động.  
+- *Amazon API Gateway*: Kết nối với Messenger và Admin Dashboard.
+
+- *Amazon DynamoDB*: Lưu cache, logs, metadata cho RAG.
+
+- *Amazon RDS (PostgreSQL)*: Lưu thông tin đặt lịch, lịch sử tương tác.
+
+- *Amazon EventBridge*: Quản lý sự kiện, cron job.
+
+- *Amazon S3 + CloudFront + Route 53*: Lưu trữ và phân phối giao diện quản trị.
+
+- *Amazon Cognito*: Quản lý người dùng và phân quyền Admin.
+
+- *AWS Secrets Manager*: Lưu trữ thông tin xác thực dịch vụ bảo mật.
+
+- *AWS Glue + Athena* (phân tích tùy chọn): Trích xuất và phân tích dữ liệu lịch sử hội thoại.
+
+
 
 ### 4. Triển khai kỹ thuật  
 *Các giai đoạn triển khai*  
-Dự án gồm 2 phần — thiết lập trạm thời tiết biên và xây dựng nền tảng thời tiết — mỗi phần trải qua 4 giai đoạn:  
-1. *Nghiên cứu và vẽ kiến trúc*: Nghiên cứu Raspberry Pi với cảm biến ESP32 và thiết kế kiến trúc AWS Serverless (1 tháng trước kỳ thực tập).  
-2. *Tính toán chi phí và kiểm tra tính khả thi*: Sử dụng AWS Pricing Calculator để ước tính và điều chỉnh (Tháng 1).  
-3. *Điều chỉnh kiến trúc để tối ưu chi phí/giải pháp*: Tinh chỉnh (ví dụ tối ưu Lambda với Next.js) để đảm bảo hiệu quả (Tháng 2).  
-4. *Phát triển, kiểm thử, triển khai*: Lập trình Raspberry Pi, AWS services với CDK/SDK và ứng dụng Next.js, sau đó kiểm thử và đưa vào vận hành (Tháng 2–3).  
+Dự án gồm 2 phần — xây dựng hệ thống chatbot và nền tảng quản trị AI Booking — mỗi phần trải qua 4 giai đoạn chính:
+
+1. *Nghiên cứu và thiết kế kiến trúc*  
+   - Phân tích các mô hình chatbot tích hợp RAG (Retrieval-Augmented Generation) và intent classification.  
+   - Đề xuất kiến trúc AWS Serverless phù hợp: Lambda, API Gateway, RDS PostgreSQL, DynamoDB, EventBridge.  
+   - Nghiên cứu mô hình CI/CD với AWS CDK hoặc CloudFormation để triển khai tự động.  
+   - (Thực hiện trước giai đoạn workshop — chuẩn bị môi trường kỹ thuật và sơ đồ kiến trúc.)
+
+2. *Tính toán chi phí và kiểm tra tính khả thi*  
+   - Sử dụng AWS Pricing Calculator để ước tính chi phí hạ tầng (Lambda, RDS, DynamoDB, Amplify, Cognito, EventBridge, S3, CloudFront).  
+   - Thực hiện thử nghiệm nhỏ trên môi trường sandbox để kiểm chứng khả năng mở rộng, thời gian phản hồi và độ ổn định.  
+   - (Giai đoạn đầu workshop — dùng kết quả để tinh chỉnh tài nguyên và định cỡ chi phí.)
+
+3. *Điều chỉnh kiến trúc và tối ưu giải pháp*  
+   - Cân đối chi phí và hiệu năng: tối ưu hóa số lượng Lambda, giảm chi phí RDS bằng caching (DynamoDB).  
+   - Xây dựng cơ chế phân tách luồng hội thoại giữa intent “Booking” và “Customer Service” để giảm overhead xử lý.  
+   - Kiểm thử khả năng mở rộng khi tăng số lượng người dùng đồng thời.  
+   - (Giữa giai đoạn workshop — đảm bảo hệ thống đạt hiệu quả chi phí và kỹ thuật tối ưu.)
+
+4. *Phát triển, kiểm thử và triển khai*  
+   - Phát triển các Lambda chính: WebhookReceiver, ChatOrchestrator, RAG Module; tích hợp RDS và DynamoDB.  
+   - Cấu hình API Gateway, EventBridge và Cognito; xây dựng giao diện quản trị bằng JavaScript.  
+   - Kiểm thử end-to-end: Messenger → API Gateway → Chatbot → Database → Dashboard.  
+   - (Cuối workshop — đưa hệ thống vào vận hành, ghi nhận kết quả và demo hoàn chỉnh.)  
 
 *Yêu cầu kỹ thuật*  
-- *Trạm thời tiết biên*: Cảm biến (nhiệt độ, độ ẩm, lượng mưa, tốc độ gió), vi điều khiển ESP32, Raspberry Pi làm thiết bị biên. Raspberry Pi chạy Raspbian, sử dụng Docker để lọc dữ liệu và gửi 1 MB/ngày/trạm qua MQTT qua Wi-Fi.  
-- *Nền tảng thời tiết*: Kiến thức thực tế về AWS Amplify (lưu trữ Next.js), Lambda (giảm thiểu do Next.js xử lý), AWS Glue (ETL), S3 (2 bucket), IoT Core (gateway và rules), và Cognito (5 người dùng). Sử dụng AWS CDK/SDK để lập trình (ví dụ IoT Core rules tới S3). Next.js giúp giảm tải Lambda cho ứng dụng web fullstack.  
+- Nền tảng chính: AWS Serverless (Lambda, API Gateway, DynamoDB, RDS PostgreSQL, EventBridge).  
+- Bảo mật: Amazon Cognito, AWS Secrets Manager, IAM Role tách biệt.  
+- Phát triển: AWS CDK/SDK, JavaScript cho giao diện quản trị.  
+- Kết nối ngoài: Facebook Messenger Webhook (API Gateway endpoint).  
+- Tự động hóa: CloudFormation template.
 
-### 5. Lộ trình & Mốc triển khai  
-- *Trước thực tập (Tháng 0)*: 1 tháng lên kế hoạch và đánh giá trạm cũ.  
-- *Thực tập (Tháng 1–3)*:  
-    - Tháng 1: Học AWS và nâng cấp phần cứng.  
-    - Tháng 2: Thiết kế và điều chỉnh kiến trúc.  
-    - Tháng 3: Triển khai, kiểm thử, đưa vào sử dụng.  
+### 5. Lộ trình & Mốc triển khai   
+- *Thực tập (Tháng 9–12)*:  
+    - Tháng 9: Học AWS củng cố kiến trúc serverless, xây dựng prototype.
+    - Tháng 10: Thiết kế và điều chỉnh kiến trúc.  
+    - Tháng 11: Phát triển và kiểm thử hệ thống.
+    - Tháng 12: Triển khai hoàn chỉnh, demo và đánh giá kết quả. 
 - *Sau triển khai*: Nghiên cứu thêm trong vòng 1 năm.  
 
 ### 6. Ước tính ngân sách  
-Có thể xem chi phí trên [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01)  
-Hoặc tải [tệp ước tính ngân sách](../attachments/budget_estimation.pdf).  
 
-*Chi phí hạ tầng*  
-- AWS Lambda: 0,00 USD/tháng (1.000 request, 512 MB lưu trữ).  
-- S3 Standard: 0,15 USD/tháng (6 GB, 2.100 request, 1 GB quét).  
-- Truyền dữ liệu: 0,02 USD/tháng (1 GB vào, 1 GB ra).  
-- AWS Amplify: 0,35 USD/tháng (256 MB, request 500 ms).  
-- Amazon API Gateway: 0,01 USD/tháng (2.000 request).  
-- AWS Glue ETL Jobs: 0,02 USD/tháng (2 DPU).  
-- AWS Glue Crawlers: 0,07 USD/tháng (1 crawler).  
-- MQTT (IoT Core): 0,08 USD/tháng (5 thiết bị, 45.000 tin nhắn).  
+- Tải xuống báo cáo ước tính ngân sách (PDF): [Ước tính ngân sách - PDF](/images/2-Proposal/chatbotestimation.pdf).  
+  
+ 
+### 7. Đánh giá rủi ro
 
-*Tổng*: 0,7 USD/tháng, 8,40 USD/12 tháng  
-- *Phần cứng*: 265 USD một lần (Raspberry Pi 5 và cảm biến).  
-
-### 7. Đánh giá rủi ro  
-*Ma trận rủi ro*  
-- Mất mạng: Ảnh hưởng trung bình, xác suất trung bình.  
-- Hỏng cảm biến: Ảnh hưởng cao, xác suất thấp.  
-- Vượt ngân sách: Ảnh hưởng trung bình, xác suất thấp.  
-
-*Chiến lược giảm thiểu*  
-- Mạng: Lưu trữ cục bộ trên Raspberry Pi với Docker.  
-- Cảm biến: Kiểm tra định kỳ, dự phòng linh kiện.  
-- Chi phí: Cảnh báo ngân sách AWS, tối ưu dịch vụ.  
-
-*Kế hoạch dự phòng*  
-- Quay lại thu thập thủ công nếu AWS gặp sự cố.  
-- Sử dụng CloudFormation để khôi phục cấu hình liên quan đến chi phí.  
+| Rủi ro | Ảnh hưởng | Xác suất | Giảm thiểu |
+|---|---:|---:|---|
+| Messenger webhook gián đoạn | Trung bình | Trung bình | Thiết lập retry & log monitoring qua CloudWatch. |
+| Sai phân quyền Lambda | Cao | Thấp | Sử dụng IAM Role riêng và kiểm thử quyền tối thiểu. |
+| Tắc nghẽn dữ liệu DynamoDB | Trung bình | Thấp | Giới hạn TTL và cache cục bộ. |
+| Vượt chi phí | Trung bình | Trung bình | Giám sát AWS Billing Alerts, bật Budget notification. |
 
 ### 8. Kết quả kỳ vọng  
-*Cải tiến kỹ thuật*: Dữ liệu và phân tích thời gian thực thay thế quy trình thủ công. Có thể mở rộng tới 10–15 trạm.  
-*Giá trị dài hạn*: Nền tảng dữ liệu 1 năm cho nghiên cứu AI, có thể tái sử dụng cho các dự án tương lai.
+- *Kỹ thuật*: Hoàn thiện chatbot AI có thể đặt lịch qua Messenger, tự động phản hồi câu hỏi khách hàng.
+- *Học thuật*: Thành viên workshop hiểu quy trình thiết kế kiến trúc AWS Serverless có tích hợp RAG.
+- *Thực tế*: Mở rộng mô hình thành chatbot doanh nghiệp, kết hợp phân tích dữ liệu hội thoại bằng Glue & Athena.
+- *Giá trị dài hạn*: Tạo tiền đề cho nền tảng Customer Service AI nội bộ hoặc sản phẩm SaaS tương tự.
