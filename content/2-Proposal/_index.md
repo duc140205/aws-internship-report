@@ -7,75 +7,79 @@ pre: " <b> 2. </b> "
 ---
 
 # AI-Powered Booking Chatbot on AWS
-## AWS Serverless RAG-integrated solution for booking and customer care
+## AWS Serverless solution with RAG and SQL-Driven workflows for booking and customer care
 
 ### 1. Executive Summary  
-The AI-Powered Booking Chatbot on AWS is an intelligent chatbot solution designed to help users book appointments and look up service information via Facebook Messenger. The system combines Retrieval-Augmented Generation (RAG) with a SQL-driven model to handle natural conversations while retrieving accurate data from a PostgreSQL database. The platform uses an AWS Serverless architecture to reduce operational costs, scale automatically, and provide high reliability.
+The AI-Powered Booking Chatbot on AWS is an intelligent chatbot solution designed to assist users with booking appointments and looking up service information via Facebook Messenger. The system leverages LLMs combined with Retrieval-Augmented Generation (RAG) and a SQL-driven model to handle natural conversations while retrieving accurate data from PostgreSQL and DynamoDB. The platform uses an AWS Serverless architecture to reduce operational costs, scale automatically, and ensure reliability.
 
 ### 2. Problem Statement  
-Current problem  
-Traditional booking systems often require manual or web-based interactions, lack natural conversational capabilities and contextual responses. Deploying AI chatbots can be complex without a flexible cloud platform to manage data, intents, and security.
+Current problems  
+Most existing chatbot solutions are limited to answering general service questions. Booking is still often handled manually (messages or phone calls) and is not fully automated, which reduces flexibility, efficiency, and accuracy as user volume grows. Deploying AI chatbots can be complex without a flexible cloud platform to manage data, conversation flows, and security.
 
 Solution  
 The project uses AWS Lambda, API Gateway, DynamoDB, PostgreSQL, and AI-supporting services to build a versatile chatbot capable of:
-  - Conversational intent analysis (booking, consultation, general questions).
-  - Connecting to databases to retrieve schedules, customer information, or analytical data.
+  - Integrating with Messenger with a simple, accessible interface.
+  - Analyzing conversational intents (booking, consultation, general questions).
+  - Connecting to databases to retrieve schedules, customer information, or analytics data.
   - Supporting a RAG module for open-ended questions or complex contexts.
   - Providing an Admin Dashboard to monitor conversation history, statistics, and system performance.
 
 Benefits and ROI  
-The solution reduces operational costs (vs. on-premises), and creates a practical learning environment for students/research teams on AWS Serverless, NLP, and RAG. The system is reusable and extendable for SMBs in the future.
+The solution aims to automate 80–90% of booking workflows and operate 24/7, reducing operational and personnel costs compared to on-premises infrastructure. It also provides practical learning for students/research teams on AWS Serverless, NLP, and RAG. The system is reusable and extensible for SMEs.
 
 ### 3. Solution Architecture  
-Overview:  
-The platform runs Serverless + VPC-secured, with all conversation processing, scheduling, and AI data handled by AWS Lambda and other serverless services.
+Overview  
+The platform runs Serverless with VPC security; all conversation processing, scheduling, and AI data are handled by AWS Lambda and other serverless services.
 
 ![Chatbot Architecture](/images/2-Proposal/chatbot_final_final.drawio.png)
 
 Main data flow
-1. User chats via Facebook Messenger → API Gateway → Lambda WebhookReceiver.
-2. Lambda ChatOrchestrator handles intent and calls the Intent Model or RAG Module.
+1. User chats via Facebook Messenger → API Gateway → Lambda WebhookReceiver (validation, authorization).
+2. Lambda ChatOrchestrator calls the Intent Model to process intent and routes to the SQL module or RAG Module.
 3. DynamoDB stores conversation cache and metadata, while PostgreSQL stores booking records and history.
-4. EventBridge manages jobs to archive database records to S3 (e.g., daily archive) for the Admin Dashboard.
-5. Admin Dashboard (Route 53 + CloudFront + S3 + Cognito) allows admins to monitor, test, and manage the system.
+4. EventBridge manages jobs to archive booking data from PostgreSQL to S3 daily for the Admin Dashboard.
+5. Admin Dashboard (Route 53 + CloudFront + S3 + Cognito) enables admins to monitor, test, analyze, and manage the system securely.
 
 AWS services used
 - AWS Lambda: conversation processing, intent orchestration, scheduling.
 - Amazon API Gateway: connects Messenger and the Admin Dashboard.
-- Amazon DynamoDB: cache, logs, and RAG metadata.
+- Amazon DynamoDB: cache, logs, metadata for RAG and short-term memory.
 - Amazon RDS (PostgreSQL): booking records and interaction history.
 - Amazon EventBridge: event management and cron jobs.
-- Amazon S3 + CloudFront + Route 53: hosting and distribution for the Admin UI.
+- Amazon S3 + CloudFront + Route 53: host and distribute the Admin UI.
 - Amazon Cognito: user management and admin authorization.
 - AWS Secrets Manager: secure storage for service credentials.
-- AWS Glue + Athena (optional analytics): extract and analyze conversation history data.
+- AWS Glue + Athena (optional analytics): extract and analyze historical conversation data.
+- Amazon Bedrock: intent analysis, entity extraction, and context-aware response generation.
+- Amazon CloudWatch: logging and monitoring.
 
 ### 4. Technical Deployment  
 Deployment stages  
-The project has two parts — the chatbot system and the AI Booking admin platform — each with four stages:
+The project has two parts — building the chatbot system and the AI Booking Admin platform — each following four main stages:
 
 1. Research and architecture design  
    - Analyze chatbot models integrating RAG and intent classification.  
    - Propose an AWS Serverless architecture: Lambda, API Gateway, RDS PostgreSQL, DynamoDB, EventBridge.  
-   - Research CI/CD using AWS CDK or CloudFormation for automated deployments.  
+   - Evaluate Foundation Models on Amazon Bedrock (e.g., Claude 3, Llama 2).  
+   - Research CI/CD with AWS CDK or CloudFormation for automated deployment.  
    - (Pre-workshop: prepare technical environment and architecture diagrams.)
 
-2. Cost estimation and feasibility checks  
+2. Cost estimation and feasibility testing  
    - Use AWS Pricing Calculator to estimate infrastructure costs (Lambda, RDS, DynamoDB, Amplify, Cognito, EventBridge, S3, CloudFront).  
-   - Run small sandbox tests to validate scalability, response times, and stability.  
-   - (Early workshop: use results to tune resources and sizing.)
+   - Run small sandbox tests to validate scalability, response time, and stability.  
+   - (Early workshop: use findings to tune resources and sizing.)
 
 3. Architecture refinement and optimization  
-   - Balance cost and performance: optimize Lambda counts, reduce RDS cost using caching with DynamoDB.  
-   - Implement conversation flow separation between "Booking" and "Customer Service" intents to reduce processing overhead.  
-   - Test scalability under concurrent users.  
-   - (Mid-workshop: ensure cost-effective and technically optimal system.)
+   - Balance cost and performance: optimize Lambda usage and reduce RDS costs using caching (DynamoDB).  
+   - Separate conversation flows for "Booking" and "Customer Service" intents to reduce processing overhead and LLM cost.  
+   - Test scalability and stability under increased concurrent users.  
+   - (Mid-workshop: ensure cost-effective and technically optimized system.)
 
-4. Development, testing and deployment  
-   - Develop core Lambdas: WebhookReceiver, ChatOrchestrator, RAG Module; integrate RDS and DynamoDB.  
-   - Configure API Gateway, EventBridge, and Cognito; build the Admin UI with JavaScript.  
-   - End-to-end testing: Messenger → API Gateway → Chatbot → Database → Dashboard.  
-   - (End of workshop: put system into operation, record results and deliver final demo.)
+4. Development, testing, and deployment  
+   - Develop core Lambdas (WebhookReceiver, ChatOrchestrator, RAG Module, ScheduleExecutor, ArchiveData, Admin Manager) and integrate RDS and DynamoDB.  
+   - Configure API Gateway, EventBridge, and Cognito; build the Admin UI in JavaScript.  
+   - Perform end-to-end testing: Messenger → API Gateway → Chatbot → Database → Dashboard.  
+   - (End of workshop: operate the system, record results, and deliver final demo.)
 
 Technical requirements  
 - Core platform: AWS Serverless (Lambda, API Gateway, DynamoDB, RDS PostgreSQL, EventBridge).  
@@ -85,11 +89,11 @@ Technical requirements
 - Automation: CloudFormation templates.
 
 ### 5. Roadmap & Milestones  
-- Internship period (Sep–Dec):  
+- Internship (Sep–Dec):  
   - Sep: Learn AWS, solidify serverless architecture, build prototype.  
   - Oct: Design and refine architecture.  
   - Nov: Develop and test the system.  
-  - Dec: Deploy fully, demo and evaluate results.  
+  - Dec: Full deployment, demo, and evaluation.  
 - Post-deployment: further research and improvements over 12 months.
 
 ### 6. Budget Estimate  
@@ -99,13 +103,13 @@ Technical requirements
 
 | Risk | Impact | Probability | Mitigation |
 |---|---:|---:|---|
-| Messenger webhook outage | Medium | Medium | Implement retries & log monitoring via CloudWatch. |
-| Incorrect Lambda permissions | High | Low | Use dedicated IAM roles and perform least-privilege permission tests. |
+| Messenger webhook outage | Medium | Medium | Implement retry logic and log monitoring with CloudWatch. |
+| Incorrect Lambda permissions | High | Low | Use dedicated IAM roles and test least-privilege permissions. |
 | DynamoDB data congestion | Medium | Low | Apply TTL limits and local caching. |
 | Cost overrun | Medium | Medium | Monitor AWS Billing Alerts and enable Budget notifications. |
 
 ### 8. Expected Outcomes  
-- Technical: Deliver a working AI chatbot capable of booking via Messenger and responding to customer queries automatically.  
-- Academic: Workshop participants gain an understanding of designing AWS Serverless architectures integrated with RAG.  
+- Technical: Deliver a working AI chatbot capable of booking via Messenger and automatically answering customer queries.  
+- Academic: Workshop participants understand how to design an AWS Serverless architecture integrated with RAG.  
 - Practical: Scale the model into an enterprise chatbot and combine conversation analytics with Glue & Athena.  
 - Long-term value: Lay the foundation for an internal Customer Service AI platform or a SaaS product.
