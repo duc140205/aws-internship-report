@@ -5,53 +5,26 @@ weight: 1
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
-
 ### Week 6 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Continue getting familiar with the internship environment and AWS learning tools.  
+* Start the **AWS Fundamentals** specialization on Coursera to strengthen foundational knowledge.  
+* Learn how to draw AWS architectures with draw.io and study sample architectures (RAG Chatbot, AI Agents) from AWS official guidance.  
+* Build the project's **first architecture version** using the **Amazon Q CLI** to prepare for hands-on deployment.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks to carry out this week:
+| Day | Tasks                                                                                                                                                                                   | Start date | Completion date | References                            |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ------------------------------------- |
+| 2   | - Access the [AWS Fundamentals Specialization](https://www.coursera.org/programs/fptu-fall-2025-zmahp/specializations/aws-fundamentals) on Coursera.                                    | 12/10/2025 | 12/10/2025      | Coursera                              |
+| 3   | - Watch introductory AWS video series on YouTube <br>&emsp; [Video Series](https://www.youtube.com/watch?v=l8isyDe-GwY&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=2) <br> - Learn to draw AWS architecture on draw.io <br> - Read the blog: [Conversational Chatbots using Retrieval Augmented Generation on AWS](https://aws.amazon.com/vi/solutions/guidance/conversational-chatbots-using-retrieval-augmented-generation-on-aws/) | 13/10/2025 | 13/10/2025      | YouTube, AWS Blog                     |
+| 4   | - Review AI Agents architecture <br>&emsp; [Advanced Multimodal Chatbot with Speech-to-Speech on AWS](https://aws.amazon.com/vi/solutions/guidance/advanced-multimodal-chatbot-with-speech-to-speech-on-aws/?did=sl_card&trk=sl_card) <br> - Experiment with using RDS to deploy a local SQL Server DB | 14/10/2025 | 14/10/2025      | AWS Solutions Library                 |
+| 5   | - Attend the WORKSHOP "DATA SCIENCE ON AWS" – take notes on data analytics and ML pipeline topics relevant to AWS                                  | 15/10/2025 | 15/10/2025      | [FPT Workshop - Data Science on AWS](https://qhdn-hcmuni.fpt.edu.vn/2025/10/13/workshop-data-science-on-aws-mo-khoa-suc-manh-du-lieu-cung-dien-toan-dam-may/) |
+| 6   | - Create the **First Architecture Version** using **Amazon Q CLI** <br> - Save and present the diagram on Notion for internal team review                                                           | 16/10/2025 | 16/10/2025      | [Notion - Pre Architecture](https://www.notion.so/pre-archi-28fd23b23efb808b978dfb3f9a20389d?v=268d23b23efb8088ba76000ca96674ea&source=copy_link) |
 
 
 ### Week 6 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Learned how to draw and represent AWS architectures using draw.io.  
+* Understood the structure and components of RAG-based chatbots and AI Agents architectures.  
+* Experimented with connecting RDS to a local SQL Server in preparation for real DB deployment.  
+* Attended the "Data Science on AWS" workshop and expanded knowledge of data exploitation and ML pipelines on AWS.  
+* Completed the project's first architecture version with Amazon Q CLI and stored it on Notion.
