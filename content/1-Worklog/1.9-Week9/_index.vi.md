@@ -5,55 +5,29 @@ weight: 1
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
 
 
 ### Mục tiêu tuần 9:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hoàn thiện kiến trúc chatbot sử dụng AWS Bedrock.
+* Làm proposal chatbot và tính toán chi phí triển khai.
+* Thành thạo Q Developer CLI để hỗ trợ sinh architecture diagram tự động.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | -------------- |
+| 2   | - Cài Q Developer CLI để gen ra kiến trúc tự động.<br>- Đọc blog về chatbot sử dụng SQL và Bedrock.<br>- Họp với team đề xuất thay Lex + Translate bằng Custom Webhook + Bedrock để câu trả lời tự nhiên hơn. | 03/11/2025   | 03/11/2025      | [GitHub Sample](https://github.com/aws-samples/sample-Dynamic-Text-to-SQL-with-Amazon-Bedrock-Agent/blob/main/bin/agentic-text2sql.ts) |
+| 3   | - Hoàn thiện kiến trúc tổng thể chatbot AWS.<br>- Tổ chức và lưu kiến trúc vào drive team.                                                                                  | 04/11/2025   | 04/11/2025      | [Drive Architecture](https://drive.google.com/drive/u/0/folders/1gkahOsw673lZPGN3CNM1mr5l34ZpCcOt) |
+| 4   | - Làm chatbot Proposal.<br>- Tính toán chi phí dựa trên các dịch vụ AWS được sử dụng.                                                 | 05/11/2025   | 05/11/2025      | [AWS Pricing Calculator](https://calculator.aws/#/estimate) |
+| 5   | - Soạn **draft proposal** cho chatbot.                                                                                               | 06/11/2025   | 06/11/2025      | |
+| 6   | - Hoàn thiện proposal, cập nhật lên GitHub Page và nộp.                                                                              | 07/11/2025   | 07/11/2025      | |
 
 ### Kết quả đạt được tuần 9:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Hoàn thành kiến trúc tổng thể cho chatbot sử dụng **AWS Bedrock**, **Lambda**, **API Gateway**, **S3**, và **Cognito**.
+* Đề xuất hướng **Custom Webhook + Bedrock** thay cho Lex nhằm tăng tính tự nhiên và linh hoạt trong phản hồi.
+* Sử dụng thành thạo **Q Developer CLI** để tự động sinh **architecture diagram**.
+* Soạn thảo và hoàn thiện **proposal chatbot**, bao gồm phần **mô tả kỹ thuật** và **tính toán chi phí** qua **AWS Pricing Calculator**.
+* Cập nhật và nộp **proposal chính thức** lên GitHub Page.
+* Rút kinh nghiệm về cách thiết kế kiến trúc serverless, chi phí và sự khác biệt giữa Bedrock Agent với Lex.

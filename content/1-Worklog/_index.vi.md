@@ -24,7 +24,7 @@ pre: " <b> 1. </b> "
 
 **Tuần 8:** [Ôn tập hệ thống kiến thức & hoàn thành kiểm tra giữa kỳ AWS First Cloud Journey](1.8-week8/)
 
-**Tuần 9:** [Làm công việc I...](1.9-week9/)
+**Tuần 9:** [Triển khai kiến trúc & Proposal Chatbot AWS Bedrock](1.9-week9/)
 
 **Tuần 10:** [Làm công việc L...](1.10-week10/)
 
