@@ -130,7 +130,6 @@ Dự án gồm 2 phần — **xây dựng hệ thống chatbot và nền tảng 
 - Amazon Bedrock: 16.38 USD — 1 yêu cầu/phút, 8 giờ/ngày, 100 input token/yêu cầu, 50 output token/yêu cầu.
 - AWS Web Application Firewall (WAF): 9.06 USD — 1 Web ACL, 3 Rules/Web ACL, 1 Managed Rule Group/Web ACL (hàng tháng).
 - Amazon RDS for PostgreSQL: 7.87 USD — 1 node db.t3.micro (25% utilization/tháng), 20 GB (General Purpose SSD gp2), Single-AZ, On-Demand.
-- Amazon CloudWatch: 3.00 USD — 10 Metrics (bao gồm custom và detailed metrics).
 - Amazon EventBridge: 1.00 USD — 1 triệu custom events/tháng (payload 1 KB), 1 triệu invocations/tháng.
 - Amazon DynamoDB: 0.96 USD — 1 GB dung lượng lưu trữ, 1 KB kích thước item trung bình, Table class: Standard.
 - AWS Glue: 0.54 USD — 2 DPUs (Apache Spark), 0.0625 DPUs (Python Shell), 1 crawler.
@@ -139,7 +138,7 @@ Dự án gồm 2 phần — **xây dựng hệ thống chatbot và nền tảng 
 - Amazon Simple Storage Service (S3): 0.13 USD — 5 GB S3 Standard storage/tháng.
 - Amazon API Gateway: 0.13 USD — Ước tính 0.1 requests/tháng.
 - AWS Lambda: 0.00 USD — 10,000 requests/tháng.
-- Tổng cộng: 96.80 USD
+- Tổng cộng: 93.80 USD
   
   *Lưu ý quan trọng*: Các con số trên được tính toán dựa trên công cụ AWS Pricing Calculator và thể hiện mức ước tính ban đầu. Trong thực tế triển khai, chi phí này có khả năng sẽ thấp hơn. Điều này là do (1) việc sử dụng thực tế có thể không đạt đến mức tối đa như trong cấu hình ước tính, (2) khả năng tận dụng các gói miễn phí (Free Tier) của AWS, và (3) các tối ưu hóa chi phí (như caching, tinh chỉnh Lambda) sẽ được áp dụng trong quá trình vận hành.
  

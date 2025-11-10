@@ -105,7 +105,6 @@ Technical requirements
 - Amazon Bedrock: $16.38 — 1 request/min, 8 hours/day, 100 input tokens/request, 50 output tokens/request.
 - AWS Web Application Firewall (WAF): $9.06 — 1 Web ACL, 3 Rules/Web ACL, 1 Managed Rule Group/Web ACL (monthly).
 - Amazon RDS for PostgreSQL: $7.87 — 1 db.t3.micro node (25% utilization/month), 20 GB (General Purpose SSD gp2), Single-AZ, On-Demand.
-- Amazon CloudWatch: $3.00 — 10 metrics (including custom and detailed metrics).
 - Amazon EventBridge: $1.00 — 1 million custom events/month (1 KB payload), 1 million invocations/month.
 - Amazon DynamoDB: $0.96 — 1 GB storage, 1 KB average item size, Table class: Standard.
 - AWS Glue: $0.54 — 2 DPUs (Apache Spark), 0.0625 DPUs (Python Shell), 1 crawler.
@@ -114,7 +113,7 @@ Technical requirements
 - Amazon Simple Storage Service (S3): $0.13 — 5 GB S3 Standard storage/month.
 - Amazon API Gateway: $0.13 — Estimated 0.1 requests/month.
 - AWS Lambda: $0.00 — 10,000 requests/month.
-- Total: $96.80
+- Total: $93.80
 
 *Important note*: The figures above were calculated using the AWS Pricing Calculator and represent initial estimates. Actual deployment costs may be lower due to (1) actual usage being below configured estimates, (2) Free Tier benefits, and (3) cost optimizations (e.g., caching, Lambda tuning) applied during operation.
 
