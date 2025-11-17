@@ -38,7 +38,7 @@ Giải pháp này dự kiến tự động hóa **80-90%** quy trình đặt l�
 **Mô tả tổng quan**:
 Nền tảng hoạt động theo mô hình Serverless + VPC-secured, trong đó toàn bộ xử lý hội thoại, lịch đặt, và dữ liệu AI đều chạy trên AWS Lambda và dịch vụ không máy chủ
 
-![Chatbot Architecture](/images/2-Proposal/chatbot_final_final.drawio.png)
+![Chatbot Architecture](/images/2-Proposal/chatbot_final_final_final.drawio.png)
 
 *Luồng dữ liệu chính*
 1. Người dùng trò chuyện qua Facebook Messenger → **API Gateway** → **Lambda WebhookReceiver** (xác minh, phân quyền).

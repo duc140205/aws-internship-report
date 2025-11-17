@@ -31,7 +31,7 @@ The solution aims to automate 80–90% of booking workflows and operate 24/7, re
 Overview  
 The platform runs Serverless with VPC security; all conversation processing, scheduling, and AI data are handled by AWS Lambda and other serverless services.
 
-![Chatbot Architecture](/images/2-Proposal/chatbot_final_final.drawio.png)
+![Chatbot Architecture](/images/2-Proposal/chatbot_final_final_final.drawio.png)
 
 Main data flow
 1. User chats via Facebook Messenger → API Gateway → Lambda WebhookReceiver (validation, authorization).

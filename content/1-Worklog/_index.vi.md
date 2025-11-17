@@ -26,7 +26,7 @@ pre: " <b> 1. </b> "
 
 **Tuần 9:** [Triển khai kiến trúc & Proposal Chatbot AWS Bedrock](1.9-week9/)
 
-**Tuần 10:** [Làm công việc L...](1.10-week10/)
+**Tuần 10:** [Triển khai hạ tầng chatbot & kết nối các dịch vụ AWS](1.10-week10/)
 
 **Tuần 11:** [Làm công việc M...](1.11-week11/)
 

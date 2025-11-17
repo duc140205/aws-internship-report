@@ -5,55 +5,34 @@ weight: 2
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
 
 
 ### Mục tiêu tuần 10:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hoàn thiện các bước khởi tạo và triển khai hạ tầng chatbot.
+* Tích hợp các dịch vụ AWS cần thiết cho hệ thống (CDK, Lambda, DynamoDB, Cognito, CloudFront...).
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2 | - Triển khai messenger webhook trên Meta Developers <br> - Bắt đầu giai đoạn 1 để triển khai chatbot bằng CDK | 10/11/2025 | 10/11/2025 | |
+| 3 | - Test thử deploy local DB lên chatbot mẫu trên GitHub <br> - Test prompt tiếng Việt và cách bot phản hồi <br> - Một số prompt OK, một số bị timeout (đang điều tra nguyên nhân) | 04/11/2025 | 04/11/2025 | |
+| 4 | - Chỉnh sửa lại architect, nối admin lambda vào thẳng DynamoDB trong RAG <br> - Code hạ tầng cơ bản ban đầu và cho Admin | 22/10/2025 | 22/10/2025 | |
+| 5 | - Hoàn thiện frontend host trên S3 qua CloudFront + Route 53 <br> - Setup Cognito cho phía Admin | 23/10/2025 | 23/10/2025 | |
+| 6 | - Nghiên cứu tự động hóa deploy frontend chung với hạ tầng bằng CDK (module S3 upload) <br> - Chỉnh sửa VPC stack <br> - Tìm hiểu JS Amplify vs dịch vụ AWS Amplify <br> - Vấn đề Glue Catalog & Lambda trong VPC <br> - Thêm Lambda ngoài VPC để invoke Glue Catalog/Crawler qua API Gateway | 24/10/2025 | 24/10/2025 | |
 
 
 ### Kết quả đạt được tuần 10:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+* Bắt đầu giai đoạn 1 của chatbot bằng CDK.
+* Kiểm thử deploy local DB lên chatbot mẫu, đánh giá hành vi bot khi dùng tiếng Việt.
+* Phân tích lỗi timeout và giả định nguyên nhân do bot hiểu sai DB.
+* Chỉnh sửa kiến trúc, bổ sung kết nối trực tiếp từ admin lambda vào DynamoDB.
+* Hoàn thiện phần frontend qua S3 + CloudFront + Route 53 và thiết lập Cognito.
+* Tìm hiểu cơ chế tự động hóa deploy frontend bằng CDK.
+* Điều chỉnh lại VPC stack và làm rõ cách Amplify JS hoạt động so với dịch vụ AWS Amplify.
+* Giải quyết bài toán Glue Catalog bằng cách thêm Lambda ngoài VPC để invoke qua API Gateway.
+* Bổ sung Lambda xử lý Glue Crawler khi user gửi request.
 
