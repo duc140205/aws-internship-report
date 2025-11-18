@@ -17,10 +17,10 @@ pre: " <b> 1.10. </b> "
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
 | 2 | - Triển khai messenger webhook trên Meta Developers <br> - Bắt đầu giai đoạn 1 để triển khai chatbot bằng CDK | 10/11/2025 | 10/11/2025 | |
-| 3 | - Test thử deploy local DB lên chatbot mẫu trên GitHub <br> - Test prompt tiếng Việt và cách bot phản hồi <br> - Một số prompt OK, một số bị timeout (đang điều tra nguyên nhân) | 04/11/2025 | 04/11/2025 | |
-| 4 | - Chỉnh sửa lại architect, nối admin lambda vào thẳng DynamoDB trong RAG <br> - Code hạ tầng cơ bản ban đầu và cho Admin | 22/10/2025 | 22/10/2025 | |
-| 5 | - Hoàn thiện frontend host trên S3 qua CloudFront + Route 53 <br> - Setup Cognito cho phía Admin | 23/10/2025 | 23/10/2025 | |
-| 6 | - Nghiên cứu tự động hóa deploy frontend chung với hạ tầng bằng CDK (module S3 upload) <br> - Chỉnh sửa VPC stack <br> - Tìm hiểu JS Amplify vs dịch vụ AWS Amplify <br> - Vấn đề Glue Catalog & Lambda trong VPC <br> - Thêm Lambda ngoài VPC để invoke Glue Catalog/Crawler qua API Gateway | 24/10/2025 | 24/10/2025 | |
+| 3 | - Test thử deploy local DB lên chatbot mẫu trên GitHub <br> - Test prompt tiếng Việt và cách bot phản hồi <br> - Một số prompt OK, một số bị timeout (đang điều tra nguyên nhân) | 11/11/2025 | 11/11/2025 | |
+| 4 | - Chỉnh sửa lại architect, nối admin lambda vào thẳng DynamoDB trong RAG <br> - Code hạ tầng cơ bản ban đầu và cho Admin | 12/11/2025 | 12/11/2025 | |
+| 5 | - Hoàn thiện frontend host trên S3 qua CloudFront + Route 53 <br> - Setup Cognito cho phía Admin | 13/11/2025 | 13/11/2025 | |
+| 6 | - Nghiên cứu tự động hóa deploy frontend chung với hạ tầng bằng CDK (module S3 upload) <br> - Chỉnh sửa VPC stack <br> - Tìm hiểu JS Amplify vs dịch vụ AWS Amplify <br> - Vấn đề Glue Catalog & Lambda trong VPC <br> - Thêm Lambda ngoài VPC để invoke Glue Catalog/Crawler qua API Gateway | 14/11/2025 | 14/11/2025 | |
 
 
 ### Kết quả đạt được tuần 10:

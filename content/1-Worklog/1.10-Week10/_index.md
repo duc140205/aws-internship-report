@@ -14,10 +14,10 @@ pre: " <b> 1.10. </b> "
 | Day | Task | Start date | Completion date | Resources |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
 | 2 | - Deploy messenger webhook on Meta Developers <br> - Start phase 1 of chatbot deployment using CDK | 10/11/2025 | 10/11/2025 | |
-| 3 | - Test deploying local DB to sample chatbot on GitHub <br> - Test Vietnamese prompts and bot responses <br> - Some prompts OK, some time out (investigating cause) | 04/11/2025 | 04/11/2025 | |
-| 4 | - Revise architecture, connect admin Lambda directly to DynamoDB in RAG <br> - Implement initial infrastructure and admin code | 22/10/2025 | 22/10/2025 | |
-| 5 | - Finalize frontend hosting on S3 via CloudFront + Route 53 <br> - Set up Cognito for Admin | 23/10/2025 | 23/10/2025 | |
-| 6 | - Research automating frontend deployment with CDK (S3 upload module) <br> - Modify VPC stack <br> - Explore Amplify JS vs AWS Amplify service <br> - Issue with Glue Catalog & Lambda in VPC <br> - Add Lambda outside VPC to invoke Glue Catalog/Crawler via API Gateway | 24/10/2025 | 24/10/2025 | |
+| 3 | - Test deploying local DB to sample chatbot on GitHub <br> - Test Vietnamese prompts and bot responses <br> - Some prompts OK, some time out (investigating cause) | 11/11/2025 | 11/11/2025 | |
+| 4 | - Revise architecture, connect admin Lambda directly to DynamoDB in RAG <br> - Implement initial infrastructure and admin code | 12/11/2025 | 12/11/2025 | |
+| 5 | - Finalize frontend hosting on S3 via CloudFront + Route 53 <br> - Set up Cognito for Admin | 13/11/2025 | 13/11/2025 | |
+| 6 | - Research automating frontend deployment with CDK (S3 upload module) <br> - Modify VPC stack <br> - Explore Amplify JS vs AWS Amplify service <br> - Issue with Glue Catalog & Lambda in VPC <br> - Add Lambda outside VPC to invoke Glue Catalog/Crawler via API Gateway | 14/11/2025 | 14/11/2025 | |
 
 
 ### Week 10 Achievements:
