@@ -28,6 +28,6 @@ pre: " <b> 1. </b> "
 
 **Tuần 10:** [Triển khai hạ tầng chatbot & kết nối các dịch vụ AWS](1.10-week10/)
 
-**Tuần 11:** [Làm công việc M...](1.11-week11/)
+**Tuần 11:** [Cải tiến quy trình xử lý dữ liệu và hoàn thiện tính năng đăng nhập](1.11-week11/)
 
 **Tuần 12:** [Làm công việc N...](1.12-week12/)
