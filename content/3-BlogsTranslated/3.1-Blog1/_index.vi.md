@@ -5,122 +5,28 @@ weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# Bắt đầu với healthcare data lakes: Sử dụng microservices
+# AWS được công nhận là Đơn vị dẫn đầu (Leader) trong báo cáo Omdia Universe 2024-25 về Quản lý & Dịch vụ Container trên Đám mây
 
-Các data lake có thể giúp các bệnh viện và cơ sở y tế chuyển dữ liệu thành những thông tin chi tiết về doanh nghiệp và duy trì hoạt động kinh doanh liên tục, đồng thời bảo vệ quyền riêng tư của bệnh nhân. **Data lake** là một kho lưu trữ tập trung, được quản lý và bảo mật để lưu trữ tất cả dữ liệu của bạn, cả ở dạng ban đầu và đã xử lý để phân tích. data lake cho phép bạn chia nhỏ các kho chứa dữ liệu và kết hợp các loại phân tích khác nhau để có được thông tin chi tiết và đưa ra các quyết định kinh doanh tốt hơn.
+Tác giả:  inboxhg và pmm | Ngày: 01 THÁNG 4, 2025 | trong [Amazon Elastic Container Service](https://aws.amazon.com/vi/blogs/containers/category/compute/amazon-elastic-container-service/), [Amazon Elastic Kubernetes Service](https://aws.amazon.com/vi/blogs/containers/category/compute/amazon-kubernetes-service/), [Announcements](https://aws.amazon.com/vi/blogs/containers/category/post-types/announcements/), [Containers](https://aws.amazon.com/vi/blogs/containers/category/containers/) | [Permalink](https://aws.amazon.com/vi/blogs/containers/aws-recognized-as-leader-in-2024-25-omdia-universe-for-cloud-container-management-services/) | [Share](https://aws.amazon.com/vi/blogs/containers/aws-recognized-as-leader-in-2024-25-omdia-universe-for-cloud-container-management-services/)
 
-Bài đăng trên blog này là một phần của loạt bài lớn hơn về việc bắt đầu cài đặt data lake dành cho lĩnh vực y tế. Trong bài đăng blog cuối cùng của tôi trong loạt bài, *“Bắt đầu với data lake dành cho lĩnh vực y tế: Đào sâu vào Amazon Cognito”*, tôi tập trung vào các chi tiết cụ thể của việc sử dụng Amazon Cognito và Attribute Based Access Control (ABAC) để xác thực và ủy quyền người dùng trong giải pháp data lake y tế. Trong blog này, tôi trình bày chi tiết cách giải pháp đã phát triển ở cấp độ cơ bản, bao gồm các quyết định thiết kế mà tôi đã đưa ra và các tính năng bổ sung được sử dụng. Bạn có thể truy cập các code samples cho giải pháp tại Git repo này để tham khảo.
+Trong bối cảnh công nghệ phát triển nhanh chóng ngày nay, container đã trở thành nền tảng của việc triển khai ứng dụng hiện đại. Khi các doanh nghiệp ngày càng áp dụng kiến trúc microservices, nhu cầu về các giải pháp quản lý container mạnh mẽ, có khả năng mở rộng và an toàn chưa bao giờ cao hơn thế. Chúng tôi rất vui mừng thông báo rằng Amazon Web Services (AWS) đã được công nhận là Leader trong báo cáo Omdia Universe 2024-25 Omdia Universe for Cloud Container Management & Services, báo cáo này đánh giá các nhà cung cấp giải pháp quản lý container hàng đầu được lưu trữ trên public cloud. AWS đã được vinh danh là Leader trong báo cáo này, đứng đầu ở trục Năng lực (Capability) và thứ hai ở trục Chiến lược & Thực thi / Trải nghiệm khách hàng.
 
----
+Các báo cáo của Omdia Universe được công nhận trên toàn cầu như một nguồn tài nguyên giá trị về phân tích công nghệ và xếp hạng nhà cung cấp. Các báo cáo này giúp khách hàng công nghệ đưa ra quyết định sáng suốt bằng cách cung cấp thông tin chi tiết về các nhà cung cấp, sản phẩm và dịch vụ, đồng thời xác định các đơn vị dẫn đầu (leader), kẻ thách thức (challenger), và triển vọng (prospect) trong các lĩnh vực công nghệ cụ thể. AWS có những năng lực rộng nhất và sâu nhất, giúp việc triển khai, điều phối, vận hành và giám sát containers dễ dàng hơn trong khi giảm bớt nhiều nhiệm vụ quản lý hạ tầng, đồng thời cho phép các nhóm tập trung vào đổi mới. AWS cung cấp dịch vụ quản lý container với [<u>Amazon Elastic Container Service (ECS)</u>](https://aws.amazon.com/vi/ecs/), được thiết kế để đơn giản hóa và cung cấp giải pháp theo định hướng AWS cho việc chạy containers ở quy mô lớn, và [<u>Amazon Elastic Kubernetes Service (EKS)</u>](https://aws.amazon.com/vi/eks/), dịch vụ Kubernetes được quản lý an toàn, đáng tin cậy nhất, có hỗ trợ Karpenter để tối ưu hóa chi phí.
 
-## Hướng dẫn kiến trúc
+## Những điểm nổi bật từ báo cáo
 
-Thay đổi chính kể từ lần trình bày cuối cùng của kiến trúc tổng thể là việc tách dịch vụ đơn lẻ thành một tập hợp các dịch vụ nhỏ để cải thiện khả năng bảo trì và tính linh hoạt. Việc tích hợp một lượng lớn dữ liệu y tế khác nhau thường yêu cầu các trình kết nối chuyên biệt cho từng định dạng; bằng cách giữ chúng được đóng gói riêng biệt với microservices, chúng ta có thể thêm, xóa và sửa đổi từng trình kết nối mà không ảnh hưởng đến những kết nối khác. Các microservices được kết nối rời thông qua tin nhắn publish/subscribe tập trung trong cái mà tôi gọi là “pub/sub hub”.
+Omdia định nghĩa một giải pháp quản lý container cho doanh nghiệp không chỉ đơn thuần là cung cấp môi trường chạy (runtime) Kubernetes. Nó bao gồm một bộ công cụ và dịch vụ toàn diện cho phép các nhóm phát triển (developer) và vận hành (operations) có thể triển khai, quản lý và mở rộng các ứng dụng containerized một cách hiệu quả. Điều này bao gồm bảng điều khiển trực quan thân thiện, khả năng service mesh, tính năng bảo mật nâng cao, các giải pháp mạng, kiểm soát truy cập dựa trên vai trò (RBAC) và hỗ trợ cho các ứng dụng có trạng thái (stateful applications).
 
-Giải pháp này đại diện cho những gì tôi sẽ coi là một lần lặp nước rút hợp lý khác từ last post của tôi. Phạm vi vẫn được giới hạn trong việc nhập và phân tích cú pháp đơn giản của các **HL7v2 messages** được định dạng theo **Quy tắc mã hóa 7 (ER7)** thông qua giao diện REST.
 
-**Kiến trúc giải pháp bây giờ như sau:**
+Theo Omdia, “AWS nhận ra giá trị kinh doanh của việc áp dụng container, xem đó là cách để tạo điều kiện cho bánh đà đổi mới (innovation flywheel). Tự động hóa việc triển khai code và vận hành khuyến khích sự linh hoạt thông qua việc cập nhật thường xuyên hơn và tỷ lệ thất bại thấp hơn. Đặc biệt với các vi dịch vụ được đóng gói trong container (containerized microservices), các nhóm phát triển có thể nhỏ hơn và độc lập hơn. AWS hướng tới việc chạy các ứng dụng an toàn, đáng tin cậy và có khả năng mở rộng, đồng thời cung cấp trải nghiệm quy trình làm việc DevOps hoàn chỉnh và nhiều lựa chọn công cụ cho các developer.”
 
-> *Hình 1. Kiến trúc tổng thể; những ô màu thể hiện những dịch vụ riêng biệt.*
+Việc AWS được công nhận là Leader trong báo cáo này nhấn mạnh cam kết của chúng tôi trong việc cung cấp các dịch vụ container tốt nhất. Báo cáo nêu bật những điểm mạnh sau đây của AWS:
 
----
+- **Lựa chọn đa dạng (Broad Choice):** AWS cung cấp một loạt các tùy chọn để làm việc với Kubernetes hoặc dịch vụ quản lý container gốc của AWS trên các môi trường cloud, edge, và on-premises.  
+- **Điều phối phi máy chủ (Serverless Orchestration):** Khách hàng có thể chọn các chế độ tính toán serverless, dựa trên kỹ năng nội bộ và nhu cầu ứng dụng của họ để tăng cường việc quản lý container.  
+- **Tối ưu hóa tài nguyên (Resource Optimization):** AWS Karpenter giúp tối ưu hóa tài nguyên của cluster và giảm chi phí, tối đa hóa hiệu quả triển khai container.
 
-Mặc dù thuật ngữ *microservices* có một số sự mơ hồ cố hữu, một số đặc điểm là chung:  
-- Chúng nhỏ, tự chủ, kết hợp rời rạc  
-- Có thể tái sử dụng, giao tiếp thông qua giao diện được xác định rõ  
-- Chuyên biệt để giải quyết một việc  
-- Thường được triển khai trong **event-driven architecture**
+![](/images/3-BlogsTranslated/figure.png)
 
-Khi xác định vị trí tạo ranh giới giữa các microservices, cần cân nhắc:  
-- **Nội tại**: công nghệ được sử dụng, hiệu suất, độ tin cậy, khả năng mở rộng  
-- **Bên ngoài**: chức năng phụ thuộc, tần suất thay đổi, khả năng tái sử dụng  
-- **Con người**: quyền sở hữu nhóm, quản lý *cognitive load*
-
----
-
-## Lựa chọn công nghệ và phạm vi giao tiếp
-
-| Phạm vi giao tiếp                        | Các công nghệ / mô hình cần xem xét                                                        |
-| ---------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Trong một microservice                   | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Giữa các microservices trong một dịch vụ | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Giữa các dịch vụ                         | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
-
----
-
-## The pub/sub hub
-
-Việc sử dụng kiến trúc **hub-and-spoke** (hay message broker) hoạt động tốt với một số lượng nhỏ các microservices liên quan chặt chẽ.  
-- Mỗi microservice chỉ phụ thuộc vào *hub*  
-- Kết nối giữa các microservice chỉ giới hạn ở nội dung của message được xuất  
-- Giảm số lượng synchronous calls vì pub/sub là *push* không đồng bộ một chiều
-
-Nhược điểm: cần **phối hợp và giám sát** để tránh microservice xử lý nhầm message.
-
----
-
-## Core microservice
-
-Cung cấp dữ liệu nền tảng và lớp truyền thông, gồm:  
-- **Amazon S3** bucket cho dữ liệu  
-- **Amazon DynamoDB** cho danh mục dữ liệu  
-- **AWS Lambda** để ghi message vào data lake và danh mục  
-- **Amazon SNS** topic làm *hub*  
-- **Amazon S3** bucket cho artifacts như mã Lambda
-
-> Chỉ cho phép truy cập ghi gián tiếp vào data lake qua hàm Lambda → đảm bảo nhất quán.
-
----
-
-## Front door microservice
-
-- Cung cấp API Gateway để tương tác REST bên ngoài  
-- Xác thực & ủy quyền dựa trên **OIDC** thông qua **Amazon Cognito**  
-- Cơ chế *deduplication* tự quản lý bằng DynamoDB thay vì SNS FIFO vì:
-  1. SNS deduplication TTL chỉ 5 phút
-  2. SNS FIFO yêu cầu SQS FIFO
-  3. Chủ động báo cho sender biết message là bản sao
-
----
-
-## Staging ER7 microservice
-
-- Lambda “trigger” đăng ký với pub/sub hub, lọc message theo attribute  
-- Step Functions Express Workflow để chuyển ER7 → JSON  
-- Hai Lambda:
-  1. Sửa format ER7 (newline, carriage return)
-  2. Parsing logic  
-- Kết quả hoặc lỗi được đẩy lại vào pub/sub hub
-
----
-
-## Tính năng mới trong giải pháp
-
-### 1. AWS CloudFormation cross-stack references
-Ví dụ *outputs* trong core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
+Hãy tải xuống toàn bộ [<u>báo cáo</u>](https://aws.amazon.com/vi/resources/analyst-reports/?trk=36baae34-e107-4879-ba82-68fd946648a0&sc_channel=el) để tìm hiểu lý do tại sao Omdia xếp AWS là Leader trong 2024-25 Omdia Universe for Cloud Container Management & Services.
