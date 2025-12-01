@@ -27,6 +27,6 @@ Việc AWS được công nhận là Leader trong báo cáo này nhấn mạnh c
 - **Điều phối phi máy chủ (Serverless Orchestration):** Khách hàng có thể chọn các chế độ tính toán serverless, dựa trên kỹ năng nội bộ và nhu cầu ứng dụng của họ để tăng cường việc quản lý container.  
 - **Tối ưu hóa tài nguyên (Resource Optimization):** AWS Karpenter giúp tối ưu hóa tài nguyên của cluster và giảm chi phí, tối đa hóa hiệu quả triển khai container.
 
-![](/images/3-BlogsTranslated/figure.png)
+![](/images/3-BlogsTranslated/3.1-Blog1/figure.png)
 
 Hãy tải xuống toàn bộ [<u>báo cáo</u>](https://aws.amazon.com/vi/resources/analyst-reports/?trk=36baae34-e107-4879-ba82-68fd946648a0&sc_channel=el) để tìm hiểu lý do tại sao Omdia xếp AWS là Leader trong 2024-25 Omdia Universe for Cloud Container Management & Services.

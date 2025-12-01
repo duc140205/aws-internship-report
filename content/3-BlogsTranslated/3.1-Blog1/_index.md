@@ -25,6 +25,6 @@ AWS’ recognition as a Leader in this report underscores our commitment to prov
 - **Serverless Orchestration:** Customers can choose serverless compute modes, based on their in-house skills and application needs to augment their container management.
 - **Resource Optimization:** AWS Karpenter helps optimize cluster resources and reduce costs, maximizing the efficiency of your container deployments.
 
-![](/images/3-BlogsTranslated/figure.png)
+![](/images/3-BlogsTranslated/3.1-Blog1/figure.png)
 
 Download the [<u>full report</u>](https://aws.amazon.com/vi/resources/analyst-reports/?trk=36baae34-e107-4879-ba82-68fd946648a0&sc_channel=el) to learn why Omdia positioned AWS as a Leader in the 2024-25 Omdia Universe for Cloud Container Management & Services.
