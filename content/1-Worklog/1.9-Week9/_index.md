@@ -12,7 +12,7 @@ pre: " <b> 1.9. </b> "
 * Become proficient with Q Developer CLI to auto-generate architecture diagrams.
 
 ### Tasks to carry out this week:
-| Day | Tasks                                                                                                                                                                   | Start date | Completion date | References |
+| Day | Tasks                                                                                                                                                                   | Start date | Completion date | Reference Material |
 | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ---------- |
 | 2   | - Install Q Developer CLI to auto-generate architecture. <br> - Read blogs about SQL-based chatbots using Bedrock. <br> - Team meeting: propose replacing Lex + Translate with a Custom Webhook + Bedrock for more natural responses. | 03/11/2025 | 03/11/2025      | [GitHub Sample](https://github.com/aws-samples/sample-Dynamic-Text-to-SQL-with-Amazon-Bedrock-Agent/blob/main/bin/agentic-text2sql.ts) |
 | 3   | - Finalize the overall AWS chatbot architecture. <br> - Organize and store the architecture in the team drive.                                                          | 04/11/2025 | 04/11/2025      | [Drive Architecture](https://drive.google.com/drive/u/0/folders/1gkahOsw673lZPGN3CNM1mr5l34ZpCcOt) |

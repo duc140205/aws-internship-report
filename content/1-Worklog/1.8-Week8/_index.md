@@ -11,7 +11,7 @@ pre: " <b> 1.8. </b> "
 * Practice quizzes and sample exams to reinforce theory and practical skills.
 
 ### Tasks to carry out this week:
-| Day | Tasks                                                                                                                                                                                   | Start date | Completion date | References                            |
+| Day | Tasks                                                                                                                                                                                   | Start date | Completion date | Reference Material                            |
 | --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ------------------------------------- |
 | 2   | - Continue reviewing AWS services for the midterm <br> - Try AI-generated practice tests to check knowledge                                                                                 | 27/10/2025 | 27/10/2025      | AI-generated quizzes, AWS Study Notes |
 | 3   | - Continue reviewing AWS services for the midterm                                                                                                 | 28/10/2025 | 28/10/2025      | Quizlet / AWS Docs                    |

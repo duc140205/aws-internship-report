@@ -15,7 +15,7 @@ pre: " <b> 1.2. </b> "
 * Learn the **AWS Transit Gateway** mechanism for connecting multiple VPCs.
 
 ### Tasks to carry out this week:
-| Day | Tasks                                                                                                                                                                                   | Start date  | Completion date | References                                |
+| Day | Tasks                                                                                                                                                                                   | Start date  | Completion date | Reference Material                                |
 | --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | --------------- | ----------------------------------------- |
 | 2   | - Study **AWS Transit Gateway**                                                                                                            | 15/09/2025  | 15/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
 | 3   | - Learn about **Compute VMs on AWS** (EC2, AMI, EBS, Instance Store, Metadata, Auto Scaling, Pricing...)<br>- Study **Lightsail, EFS, FSx, MGN**<br>- Complete Module 03-01 → 03-07, 03-02                                            | 16/09/2025  | 16/09/2025      | <https://cloudjourney.awsstudygroup.com/> |

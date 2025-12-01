@@ -14,7 +14,7 @@ pre: " <b> 1.3. </b> "
 * Take notes and organize knowledge to support following weeks.
 
 ### Tasks to carry out this week:
-| Day | Tasks                                                                                                                                                                                   | Start date  | Completion date | References                            |
+| Day | Tasks                                                                                                                                                                                   | Start date  | Completion date | Reference Material                            |
 | --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | --------------- | ------------------------------------- |
 | 2   | - Learn & practice Amazon S3, Snow Family, Storage Gateway, AWS Backup, Disaster Recovery                                        | 22/09/2025  | 22/09/2025      | [YouTube Playlist](https://www.youtube.com/watch?v=AQlsd0nWdZk&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i), [Cloud Journey](https://cloudjourney.awsstudygroup.com/) |
 | 3   | - Note & deploy Amazon S3, AWS Backup                                                                                         | 23/09/2025  | 23/09/2025      | [Notion - Deploy AWS Backup](https://www.notion.so/Deploy-AWS-Backup-to-the-System-277d1c243c6a8059b6e6ec4f32511a00), [Notion - Amazon S3](https://www.notion.so/Kh-i-u-V-i-Amazon-S3-277d1c243c6a80e1a7b9fa625b0383bd) |

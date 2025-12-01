@@ -13,7 +13,7 @@ pre: " <b> 1.6. </b> "
 * Build the project's **first architecture version** using the **Amazon Q CLI** to prepare for hands-on deployment.
 
 ### Tasks to carry out this week:
-| Day | Tasks                                                                                                                                                                                   | Start date | Completion date | References                            |
+| Day | Tasks                                                                                                                                                                                   | Start date | Completion date | Reference Material                            |
 | --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ------------------------------------- |
 | 2   | - Access the [AWS Fundamentals Specialization](https://www.coursera.org/programs/fptu-fall-2025-zmahp/specializations/aws-fundamentals) on Coursera.                                    | 12/10/2025 | 12/10/2025      | Coursera                              |
 | 3   | - Watch introductory AWS video series on YouTube <br>&emsp; [Video Series](https://www.youtube.com/watch?v=l8isyDe-GwY&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=2) <br> - Learn to draw AWS architecture on draw.io <br> - Read the blog: [Conversational Chatbots using Retrieval Augmented Generation on AWS](https://aws.amazon.com/vi/solutions/guidance/conversational-chatbots-using-retrieval-augmented-generation-on-aws/) | 13/10/2025 | 13/10/2025      | YouTube, AWS Blog                     |

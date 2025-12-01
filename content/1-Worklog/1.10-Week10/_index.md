@@ -11,7 +11,7 @@ pre: " <b> 1.10. </b> "
 * Integrate necessary AWS services for the system (CDK, Lambda, DynamoDB, Cognito, CloudFront, etc.).
 
 ### Tasks to be carried out this week:
-| Day | Task | Start date | Completion date | Resources |
+| Day | Task | Start date | Completion date | Reference Material |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
 | 2 | - Deploy messenger webhook on Meta Developers <br> - Start phase 1 of chatbot deployment using CDK | 10/11/2025 | 10/11/2025 | |
 | 3 | - Test deploying local DB to sample chatbot on GitHub <br> - Test Vietnamese prompts and bot responses <br> - Some prompts OK, some time out (investigating cause) | 11/11/2025 | 11/11/2025 | |

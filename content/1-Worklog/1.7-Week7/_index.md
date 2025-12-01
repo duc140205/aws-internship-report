@@ -15,7 +15,7 @@ pre: " <b> 1.7. </b> "
 
 
 ### Tasks to carry out this week:
-| Day | Tasks | Start date | Completion date | References |
+| Day | Tasks | Start date | Completion date | Reference Material |
 | --- | ----- | ---------- | --------------- | ----------- |
 | 2 | - Study how to downscale the project. <br> - Learn how to implement an architecture on AWS. <br> - Note a rare incident: **AWS outage in us-east-1**, affecting many systems. | 20/10/2025 | 20/10/2025 | Internal AWS reports, incident reports |
 | 3 | - Review core AWS knowledge to prepare for assessments. | 21/10/2025 | 21/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
