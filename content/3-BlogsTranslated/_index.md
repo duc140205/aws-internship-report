@@ -14,7 +14,7 @@ This blog highlights AWS’s recognition as a Leader in the 2024-25 Omdia Univer
 ###  [Blog 2 - AWS Savings Plans: How to Implement an Effective Chargeback Strategy](3.2-Blog2/)
 This blog explains how to implement an effective chargeback strategy for AWS Savings Plans in large organizations. It covers how Savings Plan discounts are shared across accounts in an AWS Organization, steps to configure AWS Data Export, AWS Glue, and use Amazon Athena to analyze cost data. The article provides practical examples for identifying effective costs and unused commitments, enabling a fair and transparent chargeback mechanism for accounts benefiting from Savings Plans.
 
-###  [Blog 3 - ...](3.3-Blog3/)
-This blog introduces how to start building a data lake in the healthcare sector by applying a microservices architecture. You will learn why data lakes are important for storing and analyzing diverse healthcare data (electronic medical records, lab test data, medical IoT devices…), how microservices help make the system more flexible, scalable, and easier to maintain. The article also guides you through the steps to set up the environment, organize the data processing pipeline, and ensure compliance with security & privacy standards such as HIPAA.
+###  [Blog 3 - AWS Weekly Roundup: Amazon S3 Express One Zone price cuts, Pixtral Large on Amazon Bedrock, Amazon Nova Sonic, and more (April 14, 2025)](3.3-Blog3/)
+This blog provides a roundup of AWS’s key announcements for the week, including major price cuts for Amazon S3 Express One Zone, the launch of the Pixtral Large model on Amazon Bedrock, Amazon Nova Sonic for human-like AI conversations, new safety features in Amazon Bedrock Guardrails, and various enhancements across storage, AI, security, and community events. The post also highlights notable AWS blog posts, upcoming events, and emphasizes the importance of the global AWS community.
 
 
