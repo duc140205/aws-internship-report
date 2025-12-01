@@ -30,4 +30,4 @@ pre: " <b> 1. </b> "
 
 **Tuần 11:** [Cải tiến quy trình xử lý dữ liệu và hoàn thiện tính năng đăng nhập](1.11-week11/)
 
-**Tuần 12:** [Làm công việc N...](1.12-week12/)
+**Tuần 12:** [Tối ưu hóa backend, tự động hóa lưu trữ và hoàn thiện quy trình triển khai hạ tầng AWS](1.12-week12/)
