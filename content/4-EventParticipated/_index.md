@@ -30,7 +30,7 @@ During my internship, I participated in four events. Each one was a memorable ex
 
 
 ### [Event 3](4.3-Event3/)  
-&emsp;**Event Name:** AWS Cloud Mastery Series #3 – Security on AWS  
+&emsp;**Event Name:** AWS Cloud Mastery Series #3 – Security Pillar Workshop  
 
 &emsp;**Date & Time:** 09:00, November 29, 2025  
 

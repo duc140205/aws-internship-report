@@ -32,7 +32,7 @@ Trong quá trình thực tập, em đã tham gia 4 events, với mỗi event là
 
 
 ### [Event 3](4.3-Event3/)
-&emsp;**Tên sự kiện:** AWS Cloud Mastery Series #3 – Security on AWS
+&emsp;**Tên sự kiện:** AWS Cloud Mastery Series #3 – Security Pillar Workshop 
 
 &emsp;**Thời gian:** 09:00 ngày 29/11/2025
 
