@@ -102,4 +102,5 @@ Nhờ áp dụng DevOps và các dịch vụ AWS, dự án chatbot AI có thể 
 - Các diễn giả không chỉ chia sẻ kiến thức lý thuyết mà còn cung cấp nhiều ví dụ thực tế, giúp mình hiểu rõ hơn về các công cụ như CloudFormation, CDK, Terraform cũng như cách vận hành và triển khai container trên AWS.
 - Sự kiện cũng là dịp tuyệt vời để mình kết nối với các bạn cùng chí hướng và học hỏi thêm nhiều kinh nghiệm thực tế từ các diễn giả.
 #### Một số hình ảnh sự kiện
+![Event Photo 1](/images/4-EventParticipated/4.2-Event2/recap.jpg)
 

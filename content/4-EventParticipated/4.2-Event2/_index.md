@@ -107,4 +107,4 @@ The speakers not only shared theoretical knowledge but also provided real-world 
 
 - The event was also a great opportunity to connect with like-minded peers and learn valuable hands-on experiences from the speakers.
 #### Some event photos
-
+![Event Photo 1](/images/4-EventParticipated/4.2-Event2/recap.jpg)
