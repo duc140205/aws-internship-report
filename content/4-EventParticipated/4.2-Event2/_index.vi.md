@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Báo cáo tổng kết: “AWS Cloud Mastery Series #2 – DevOps on AWS”
+# Bài thu hoạch: “AWS Cloud Mastery Series #2 – DevOps on AWS”
 
 ### Mục Đích Của Sự Kiện
 
