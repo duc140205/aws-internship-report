@@ -344,51 +344,33 @@ Phân bổ đóng góp chi phí giữa Đối tác, Khách hàng, AWS:
 
 ## 7. NGHIỆM THU
 
-### 7.1  QUY TRÌNH NGHIỆM THU 
-Để kết thúc một giai đoạn dự án hoặc bàn giao cuối cùng, quy trình nghiệm thu sau đây sẽ được áp dụng:
-1. Nộp sản phẩm: Khi hoàn thành một Giai đoạn (Phase), Đối tác sẽ nộp các Sản phẩm bàn giao hữu hình tương ứng cho Nhà tài trợ điều hành phía Khách hàng, kèm theo Mẫu Chấp nhận (Acceptance Form) chính thức.
-2. Thời gian xem xét: Sau khi nhận sản phẩm, Khách hàng sẽ có tám (8) ngày làm việc (“Thời hạn Chấp nhận”) để xem xét, đánh giá và kiểm thử các Sản phẩm bàn giao nhằm xác định xem chúng có đáp ứng các tiêu chí chấp nhận hay không.
-3. Phê duyệt: Nếu các Sản phẩm bàn giao đáp ứng đầy đủ tiêu chí chấp nhận ở mọi khía cạnh trọng yếu, Khách hàng sẽ gửi văn bản xác nhận chấp nhận thông qua Mẫu Chấp nhận trước khi Thời hạn Chấp nhận kết thúc.
-4. Từ chối & Sửa lỗi:
-    * Nếu một Sản phẩm bàn giao không được chấp nhận do không phù hợp hoặc có lỗi, Khách hàng phải cung cấp Thông báo Từ chối bằng văn bản, trong đó nêu rõ các lỗi cụ thể.
-    * Đối tác sẽ nhanh chóng sửa chữa các lỗi (khắc phục) để đáp ứng yêu cầu và gửi lại Sản phẩm bàn giao đã chỉnh sửa trong chu kỳ Sprint tiếp theo (hoặc theo thời gian được thỏa thuận).
-5. Được coi là Đã nghiệm thu: Nếu Khách hàng không cung cấp Thông báo Từ chối hoặc Mẫu Nghiệm thu đã ký trước khi kết thúc Thời gian Nghiệm thu áp dụng, các Sản phẩm Bàn giao tương ứng được coi là tự động được nghiệm thu.
+### 7.1 QUY TRÌNH ĐÁNH GIÁ (EVALUATION PROCESS)
+Vì đây là dự án Proof of Concept (POC) trong khuôn khổ chương trình đào tạo, quy trình nghiệm thu sẽ tập trung vào việc chứng minh tính khả thi của giải pháp:
 
+1.  **Triển khai & Kiểm tra nội bộ:** Nhóm dự án tự kiểm tra (Self-test) để đảm bảo các luồng chính hoạt động trên môi trường AWS.
+2.  **Buổi Demo Chính thức:** Nhóm thực hiện demo trực tiếp các kịch bản sử dụng (Use-cases) đã cam kết trước Mentor/Giảng viên.
+3.  **Phản hồi:** Nhận xét từ Mentor về chức năng và kiến trúc.
+4.  **Hoàn thiện:** Chỉnh sửa các lỗi nghiêm trọng (nếu có) ảnh hưởng đến luồng chính và nộp báo cáo tổng kết.
 
-### 7.2  TIÊU CHÍ NGHIỆM THU CỤ THỂ 
-Dự án sẽ được coi là đã bàn giao thành công khi đáp ứng các tiêu chí kỹ thuật và vận hành sau:
+### 7.2 TIÊU CHÍ NGHIỆM THU (ACCEPTANCE CRITERIA)
+Dự án được coi là hoàn thành khi đáp ứng các tiêu chí chức năng cơ bản sau (chấp nhận các lỗi nhỏ về giao diện hoặc các trường hợp biên chưa xử lý hết):
 
-**Tài liệu & Thiết kế**:
+**1. Hạ tầng AWS (Infrastructure):**
+*   Hệ thống được triển khai thành công trên AWS (không chạy local).
+*   Các dịch vụ chính (Lambda, RDS, Bedrock) kết nối được với nhau.
 
-*  Tài liệu Kiến trúc Kỹ thuật (Thiết kế Cấp cao & Cấp thấp) được hoàn thiện và phê duyệt bởi Kiến trúc sư Giải pháp.
-*  Thiết kế Cơ sở hạ tầng (VPC, Nhóm Bảo mật) tuân thủ AWS Well-Architected Framework.
+**2. Chức năng Chatbot (Core Flow):**
+*   **Kịch bản suôn sẻ (Happy Path):** Chatbot có thể thực hiện thành công một quy trình đặt lịch từ đầu đến cuối (Hỏi -> Kiểm tra -> Đặt -> Lưu vào DB) trong điều kiện mạng bình thường.
+*   **Phản hồi:** Chatbot trả lời được các câu hỏi đúng trọng tâm (dựa trên khả năng của mô hình AI hiện tại).
 
-**Cơ sở hạ tầng & Bảo mật**:
-*  Tất cả tài nguyên AWS (VPC, Lambda, API Gateway, RDS, DynamoDB, Cognito) được triển khai thành công thông qua AWS CDK.
-*  Bảo mật mạng được xác minh: Các Subnet Riêng biệt lập, VPC Endpoints hoạt động và Truy cập Cơ sở dữ liệu bị hạn chế.
-*  Ghi nhật ký và Giám sát (CloudWatch Logs & Metrics) được cấu hình và đang thu thập dữ liệu hoạt động.
+**3. Website Quản lý (Admin Dashboard / Cổng thông tin Tư vấn viên):**
+*   Truy cập được vào trang web qua đường dẫn CloudFront/S3.
+*   Đăng nhập thành công bằng tài khoản Admin và Tư vấn viên.
+*   Hiển thị được dữ liệu lịch hẹn từ cơ sở dữ liệu (có thể có độ trễ nhỏ).
 
-**Chức năng Chatbot**:
-*  Luồng Đầu cuối: Xử lý thành công luồng đặt lịch hoàn chỉnh (Ý định → Kiểm tra Khả dụng → Đặt lịch → Xác nhận) trên Facebook Messenger.
-*  Hiệu suất AI:
-   *  Phát hiện ý định hoạt động ổn định cho các ý định cốt lõi (Đặt lịch vs. Hỏi đáp).
-   *  Độ chính xác Text-to-SQL đạt ≥ 80% trên tập dữ liệu kiểm thử đã xác định.
-*  Tính toàn vẹn Dữ liệu: Dữ liệu đặt lịch được lưu trữ chính xác trong Amazon RDS PostgreSQL và đồng bộ hóa với trạng thái phiên DynamoDB.
-
-**Bảng điều khiển Admin**:
-*  Xác thực hoạt động chính xác qua Amazon Cognito (Đăng nhập/Đăng xuất).
-*  Các tính năng cốt lõi hoạt động: Xem Danh sách Cuộc hẹn, Thống kê Bảng điều khiển, Quản lý Tư vấn viên.
-*  UI/UX phản hồi tốt và không có lỗi chặn nghiêm trọng (critical blocking bugs).
-
-**Cổng thông tin Tư vấn viên**:
-*  Xác thực: Đăng nhập/Đăng xuất an toàn qua Amazon Cognito cho các tư vấn viên được ủy quyền.
-*  Quy trình làm việc Cốt lõi: Tư vấn viên có thể xem lịch trình và quản lý cuộc hẹn (Xác nhận, Hủy, Hoàn thành).
-*  Tích hợp Hệ thống: Các hành động kích hoạt chính xác cập nhật trạng thái trong Cơ sở dữ liệu và gửi thông báo email cho khách hàng.
-  
-**Sự sẵn sàng Go-Live**:
-*  Kiểm thử Chấp nhận Người dùng (UAT) hoàn thành cho tất cả các luồng kinh doanh quan trọng.
-*  Sổ tay Người dùng / Hướng dẫn Vận hành được bàn giao.
-*  Buổi thuyết trình Demo Dự án cuối cùng được thực hiện cho các bên liên quan.
+**4. Tài liệu:**
+*   Cung cấp đầy đủ Source Code trên GitHub.
+*   Tài liệu hướng dẫn cài đặt (Readme) và báo cáo kiến trúc dự án.
 
 ---
 Tải xuống tài liệu đề xuất đầy đủ: [MeetAssist Chatbot Đặt lịch Thông minh](/images/2-Proposal/Proposal_Template.docx)
