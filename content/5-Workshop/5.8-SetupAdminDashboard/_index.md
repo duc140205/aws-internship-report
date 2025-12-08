@@ -36,6 +36,8 @@ After logging in, you should see the dashboard homepage with:
 - Appointments breakdown by status
 - Recent appointments list
 
+![Admin Dashboard Homepage](/images/5-Workshop/5.8-SetupAdminDashboard/1.jpg)
+
 {{% notice tip %}}
 You can create additional admin users by repeating Step 1 with different email addresses.
 {{% /notice %}}
@@ -47,9 +49,5 @@ You can create additional admin users by repeating Step 1 with different email a
 - Check if the user was created successfully in Cognito Console
 - Ensure you're using the correct temporary password
 
-**Issue: Dashboard not loading**
-- Check if the S3 bucket contains the dashboard files
-- Verify CloudFront distribution is active
-- Check browser console for errors
 
 Now you're ready to use the Admin Dashboard to manage consultants and appointments!

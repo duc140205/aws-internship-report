@@ -36,6 +36,8 @@ Sau khi đăng nhập, bạn sẽ thấy trang chủ dashboard với:
 - Phân loại lịch hẹn theo trạng thái
 - Danh sách lịch hẹn gần đây
 
+![Admin Dashboard Home](/images/5-Workshop/5.8-SetupAdminDashboard/1.jpg)
+
 {{% notice tip %}}
 Bạn có thể tạo thêm admin user bằng cách lặp lại Bước 1 với các địa chỉ email khác nhau.
 {{% /notice %}}
@@ -47,9 +49,5 @@ Bạn có thể tạo thêm admin user bằng cách lặp lại Bước 1 với 
 - Kiểm tra xem user đã được tạo thành công trong Cognito Console chưa
 - Đảm bảo bạn đang sử dụng đúng mật khẩu tạm thời
 
-**Vấn đề: Dashboard không tải**
-- Kiểm tra xem S3 bucket có chứa các file dashboard không
-- Xác minh CloudFront distribution đang hoạt động
-- Kiểm tra browser console để tìm lỗi
 
 Bây giờ bạn đã sẵn sàng sử dụng Admin Dashboard để quản lý tư vấn viên và lịch hẹn!

@@ -30,6 +30,8 @@ Sau khi đăng nhập, trang chủ dashboard hiển thị:
 - Danh sách các lịch hẹn gần nhất
 - Xem nhanh khách hàng, tư vấn viên, ngày và trạng thái
 
+![Admin Dashboard Home](/images/5-Workshop/5.10-UsingAdminDashboard/1.jpg)
+
 ### Quản lý Tư vấn viên
 
 Điều hướng đến phần **Consultants** để quản lý đội ngũ tư vấn viên.
@@ -40,20 +42,24 @@ Sau khi đăng nhập, trang chủ dashboard hiển thị:
 - Các cột: Tên, Email, Chuyên môn, Trạng thái
 - Khả năng tìm kiếm và lọc
 
+![Consultants List](/images/5-Workshop/5.10-UsingAdminDashboard/2.jpg)
+
 #### Thêm Tư vấn viên Mới
 
 1. Nhấp vào nút **Add Consultant**
 2. Điền thông tin tư vấn viên:
    - Họ và Tên
    - Email
+   - Số điện thoại
    - Chuyên môn
-   - Tiểu sử
-   - URL Ảnh đại diện (tùy chọn)
+   - Trình độ
 3. Nhấp **Create**
 
 {{% notice info %}}
 Tạo tư vấn viên sẽ tự động tạo tài khoản Cognito tương ứng với thông tin đăng nhập tạm thời được gửi đến email của họ.
 {{% /notice %}}
+
+![Add Consultant](/images/5-Workshop/5.10-UsingAdminDashboard/3.jpg)
 
 #### Chỉnh sửa Thông tin Tư vấn viên
 
@@ -61,15 +67,14 @@ Tạo tư vấn viên sẽ tự động tạo tài khoản Cognito tương ứng
 2. Cập nhật các trường mong muốn
 3. Nhấp **Save Changes**
 
+![Edit Consultant](/images/5-Workshop/5.10-UsingAdminDashboard/4.jpg)
+
 #### Xóa Tư vấn viên
 
 1. Nhấp vào nút **Delete** bên cạnh tư vấn viên
 2. Xác nhận xóa
 3. Tài khoản Cognito của tư vấn viên cũng sẽ bị xóa
 
-{{% notice warning %}}
-Xóa tư vấn viên sẽ không xóa các lịch hẹn lịch sử của họ, nhưng họ sẽ không còn có thể đặt lịch được nữa.
-{{% /notice %}}
 
 #### Reset Mật khẩu Tư vấn viên
 
@@ -77,38 +82,7 @@ Xóa tư vấn viên sẽ không xóa các lịch hẹn lịch sử của họ, 
 2. Mật khẩu tạm thời mới sẽ được tạo
 3. Tư vấn viên sẽ nhận mật khẩu qua email
 
-### Quản lý Lịch trình
 
-Điều hướng đến phần **Schedules** để quản lý lịch rảnh của tư vấn viên.
-
-#### Xem Lịch trình
-
-- Xem tất cả các khung giờ của tất cả tư vấn viên
-- Lọc theo tư vấn viên, ngày trong tuần, hoặc trạng thái
-- Chế độ xem lịch để trực quan hóa tốt hơn
-
-#### Thêm Khung giờ
-
-1. Nhấp **Add Time Slot**
-2. Chọn tư vấn viên
-3. Chọn ngày trong tuần (Thứ 2 - Chủ nhật)
-4. Đặt giờ bắt đầu và giờ kết thúc
-5. Nhấp **Create**
-
-#### Chỉnh sửa Khung giờ
-
-1. Nhấp vào nút **Edit** bên cạnh khung giờ
-2. Sửa đổi thời gian hoặc trạng thái
-3. Nhấp **Save**
-
-#### Xóa Khung giờ
-
-1. Nhấp vào nút **Delete** bên cạnh khung giờ
-2. Xác nhận xóa
-
-{{% notice tip %}}
-Bạn có thể tạo khung giờ lặp lại bằng cách thêm cùng một giờ cho nhiều ngày trong tuần.
-{{% /notice %}}
 
 ### Quản lý Lịch Hẹn
 
@@ -123,15 +97,8 @@ Bạn có thể tạo khung giờ lặp lại bằng cách thêm cùng một gi�
   - Tư vấn viên
   - Khách hàng
 
-#### Chi tiết Lịch Hẹn
+![Schedules Management](/images/5-Workshop/5.10-UsingAdminDashboard/5.jpg)
 
-Nhấp vào bất kỳ lịch hẹn nào để xem:
-- Thông tin khách hàng
-- Thông tin tư vấn viên
-- Ngày và giờ
-- Trạng thái
-- Ghi chú
-- Thời gian tạo
 
 #### Tạo Lịch Hẹn Thủ công
 
@@ -142,15 +109,16 @@ Nhấp vào bất kỳ lịch hẹn nào để xem:
 5. Thêm ghi chú (tùy chọn)
 6. Nhấp **Book Appointment**
 
+
+![Create Appointment](/images/5-Workshop/5.10-UsingAdminDashboard/6.jpg)
+
 #### Cập nhật Lịch Hẹn
 
 1. Nhấp **Edit** trên lịch hẹn
 2. Sửa đổi chi tiết (thời gian, tư vấn viên, ghi chú)
 3. Nhấp **Update**
 
-{{% notice info %}}
-Thông báo email sẽ được gửi đến cả khách hàng và tư vấn viên khi lịch hẹn được tạo hoặc cập nhật.
-{{% /notice %}}
+![Edit Appointment](/images/5-Workshop/5.10-UsingAdminDashboard/7.jpg)
 
 #### Hủy Lịch Hẹn
 
@@ -166,24 +134,5 @@ Cập nhật thủ công trạng thái lịch hẹn:
 - **Confirmed** → **Completed**: Đánh dấu đã hoàn thành
 - **Bất kỳ** → **Cancelled**: Hủy lịch hẹn
 
-### Tính năng Tìm kiếm và Lọc
-
-Tất cả các bảng dữ liệu hỗ trợ:
-- **Search**: Tìm kiếm văn bản tự do trên các trường liên quan
-- **Sort**: Nhấp vào tiêu đề cột để sắp xếp
-- **Filter**: Sử dụng bộ lọc dropdown cho trạng thái, ngày, v.v.
-- **Pagination**: Điều hướng qua các bộ dữ liệu lớn
-
-### Cài đặt Dashboard
-
-Truy cập cài đặt từ menu góc trên bên phải:
-- Cập nhật hồ sơ admin của bạn
-- Thay đổi mật khẩu
-- Cấu hình mẫu email
-- Tùy chọn hệ thống
-
-{{% notice tip %}}
-Sử dụng tính năng tìm kiếm của dashboard để nhanh chóng tìm tư vấn viên, khách hàng hoặc lịch hẹn cụ thể thay vì cuộn qua danh sách dài.
-{{% /notice %}}
 
 Bây giờ bạn có toàn quyền kiểm soát hệ thống MeetAssist thông qua Admin Dashboard!

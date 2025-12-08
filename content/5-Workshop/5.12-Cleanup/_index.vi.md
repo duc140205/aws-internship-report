@@ -38,7 +38,7 @@ Khi được nhắc, xác nhận xóa bằng cách gõ `y`.
 - IAM roles và policies
 
 {{% notice info %}}
-Quá trình CDK destroy có thể mất 10-15 phút để hoàn thành. Đợi xác nhận trước khi tiếp tục bước tiếp theo.
+Quá trình CDK destroy có thể mất 30-40 phút để hoàn thành. Đợi xác nhận trước khi tiếp tục bước tiếp theo.
 {{% /notice %}}
 
 ### Bước 2: Xóa S3 Buckets
@@ -175,10 +175,6 @@ Theo dõi AWS Cost Explorer của bạn trong 2-3 ngày sau khi dọn dẹp đ�
 - Xóa thủ công các tài nguyên bị kẹt qua AWS Console
 - Thử lại `cdk destroy` sau can thiệp thủ công
 
-**Vấn đề: S3 bucket không xóa được**
-- Đảm bảo bucket hoàn toàn trống (kiểm tra versioned objects)
-- Vô hiệu hóa versioning nếu được bật
-- Sử dụng cờ `--force`: `aws s3 rb s3://bucket-name --force`
 
 **Vấn đề: RDS instance không xóa**
 - Kiểm tra xem deletion protection có được bật không
@@ -190,23 +186,6 @@ Theo dõi AWS Cost Explorer của bạn trong 2-3 ngày sau khi dọn dẹp đ�
 - Tìm CloudWatch Logs log groups (có thể tích lũy chi phí lưu trữ)
 - Xem lại Cost Explorer để phân tích chi tiết
 
-### Xuất Dữ liệu (Trước khi Dọn dẹp)
 
-Nếu bạn cần giữ dữ liệu trước khi xóa:
-
-**Xuất RDS Data:**
-```bash
-pg_dump -h <rds-endpoint> -U meetassist_admin -d meetassist > backup.sql
-```
-
-**Xuất DynamoDB Data:**
-```bash
-aws dynamodb scan --table-name MeetAssist-Sessions --region ap-northeast-1 > sessions.json
-```
-
-**Tải xuống S3 Files:**
-```bash
-aws s3 sync s3://meetassist-data-<account-id>-ap-northeast-1 ./local-backup/
-```
 
 Chúc mừng! Bạn đã dọn dẹp thành công tất cả tài nguyên workshop. Cảm ơn bạn đã hoàn thành workshop này!

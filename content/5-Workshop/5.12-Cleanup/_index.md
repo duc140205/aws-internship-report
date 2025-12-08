@@ -38,7 +38,7 @@ This will remove:
 - IAM roles and policies
 
 {{% notice info %}}
-The CDK destroy process may take 10-15 minutes to complete. Wait for confirmation before proceeding to the next step.
+The CDK destroy process may take 30-40 minutes to complete. Wait for confirmation before proceeding to the next step.
 {{% /notice %}}
 
 ### Step 2: Delete S3 Buckets
@@ -175,11 +175,6 @@ Monitor your AWS Cost Explorer for 2-3 days after cleanup to ensure no unexpecte
 - Manually delete stuck resources through AWS Console
 - Retry `cdk destroy` after manual intervention
 
-**Issue: S3 bucket won't delete**
-- Ensure bucket is completely empty (check versioned objects)
-- Disable versioning if enabled
-- Use `--force` flag: `aws s3 rb s3://bucket-name --force`
-
 **Issue: RDS instance not deleting**
 - Check if deletion protection is enabled
 - Disable in RDS Console → Modify → uncheck "Enable deletion protection"
@@ -190,23 +185,6 @@ Monitor your AWS Cost Explorer for 2-3 days after cleanup to ensure no unexpecte
 - Look for CloudWatch Logs log groups (can accumulate storage costs)
 - Review Cost Explorer for detailed breakdown
 
-### Data Export (Before Cleanup)
 
-If you need to preserve data before deletion:
-
-**Export RDS Data:**
-```bash
-pg_dump -h <rds-endpoint> -U meetassist_admin -d meetassist > backup.sql
-```
-
-**Export DynamoDB Data:**
-```bash
-aws dynamodb scan --table-name MeetAssist-Sessions --region ap-northeast-1 > sessions.json
-```
-
-**Download S3 Files:**
-```bash
-aws s3 sync s3://meetassist-data-<account-id>-ap-northeast-1 ./local-backup/
-```
 
 Congratulations! You've successfully cleaned up all workshop resources. Thank you for completing this workshop!
