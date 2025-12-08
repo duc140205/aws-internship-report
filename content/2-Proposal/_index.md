@@ -1,6 +1,6 @@
 ---
 title: "Proposal"
-date: "2025-12-03"
+date: "2025-09-09"
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
@@ -8,10 +8,20 @@ pre: " <b> 2. </b> "
 
 # Intelligent Scheduling Chatbot on AWS
 
-**Date:** December 3, 2025  
+**Date:** December 03, 2025  
 **Team:** Vinhomies – FPT University
 
 ---
+
+## Table of Contents
+
+1. [Background and Motivation](#1-background-and-motivation)
+2. [Solution Architecture](#2-solution-architecture)
+3. [Activities and Deliverables](#3-activities-and-deliverables)
+4. [Expected AWS Cost Breakdown](#4-expected-aws-cost-breakdown)
+5. [Team](#5-team)
+6. [Resources & Cost Estimates](#6-resources--cost-estimates)
+7. [Acceptance](#7-acceptance)
 
 ## 1. BACKGROUND AND MOTIVATION
 
@@ -379,3 +389,6 @@ The project will be considered successfully delivered when the following technic
 *	User Acceptance Testing (UAT) completed for all critical business flows.
 *	User Manuals / Operational Guides are handed over.
 *	Final Project Demo presentation is conducted for stakeholders.
+
+---
+Download full proposal document: [MeetAssist Intelligent Scheduling Chatbot](/images/2-Proposal/Proposal_Template.docx)
