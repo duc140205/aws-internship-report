@@ -10,14 +10,9 @@ pre: " <b> 5. </b> "
 
 #### Overview
 
-**AWS PrivateLink** provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.
+In this workshop, we will build **MeetAssist** — an intelligent chatbot system running on the **AWS Serverless** platform. This solution applies Generative AI (LLM) to automate the process of appointment scheduling and customer information lookup through a Facebook Messenger interface.
 
-In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.
-
-You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location
-+ **Gateway** - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.
-+ **Interface** - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.
-
+Instead of responding based on a fixed rule-based script, the system uses a **Text-to-SQL** model to understand natural language, query real-time data from the database, and provide flexible responses to users.
 #### Content
 
 1. [Workshop overview](5.1-Workshop-overview)
