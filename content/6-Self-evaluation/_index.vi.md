@@ -129,6 +129,22 @@ Tôi luôn cố gắng hoàn thành nhiệm vụ đúng hạn, chủ động ngh
    - Tạo tài liệu kiến trúc toàn diện và ước tính chi phí
    - Đề xuất và triển khai các tối ưu hóa tiết kiệm chi phí
 
+**Lĩnh vực cần phát triển thêm:**
+
+Mặc dù đạt được thành tích tốt trên tất cả các tiêu chí, tôi nhận thấy vẫn còn nhiều cơ hội để phát triển:
+
+1. **Quản lý thời gian**
+   - Có thể tối ưu hơn việc cân bằng giữa học nhiều dịch vụ AWS cùng lúc và tìm hiểu sâu các chủ đề cụ thể
+   - Cơ hội cải thiện kỹ năng ước lượng thời gian cho các tác vụ triển khai phức tạp
+
+2. **Giao tiếp kỹ thuật**
+   - Mặc dù tài liệu viết đã toàn diện, tôi có thể tiếp tục cải thiện khả năng giải thích kiến trúc phức tạp bằng lời nói cho đối tượng phi kỹ thuật
+   - Luyện tập trình bày các đánh đổi kỹ thuật ngắn gọn hơn trong các cuộc họp có giới hạn thời gian
+
+3. **Phòng ngừa vấn đề chủ động**
+   - Mặc dù đã giải quyết vấn đề thành công, tôi có thể phát triển khả năng dự đoán các vấn đề tiềm ẩn tốt hơn trước khi chúng xảy ra
+   - Tăng cường quy trình kiểm tra trước triển khai để phát hiện lỗi cấu hình sớm hơn
+
 ---
 
 ### Bài học kinh nghiệm chính
