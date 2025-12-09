@@ -11,7 +11,7 @@ pre: " <b> 2. </b> "
 [![Download MeetAssist Chatbot Proposal](https://img.shields.io/badge/MeetAssist_Chatbot_Proposal-Click_Here-0056D2?style=for-the-badge&logo=google-docs&logoColor=white)](/images/2-Proposal/Proposal_Template.docx)
 
 ### 1. Executive Summary
-The Intelligent Scheduling Chatbot on AWS is a fully serverless solution designed to automate appointment booking and customer support through Facebook Messenger. The system integrates Large Language Models (LLMs) on Amazon Bedrock (Claude 3.5 Sonnet, Claude 3 Haiku) using a Text-to-SQL mechanism to query/execute SQL on a PostgreSQL database. It ensures accurate, context-aware responses and reduces manual scheduling workload by 80–90% while maintaining enterprise-grade security within the Asia Pacific (Tokyo) region.
+The Intelligent Scheduling Chatbot on AWS is a fully serverless solution designed to automate appointment booking and customer support through Facebook Messenger. The system integrates Large Language Models (LLMs) on Amazon Bedrock (Claude 3.5 Sonnet, Claude 3 Haiku, Claude 3 Sonnent) using a Text-to-SQL mechanism to query/execute SQL on a PostgreSQL database. It ensures accurate, context-aware responses and reduces manual scheduling workload by 80–90% while maintaining enterprise-grade security within the Asia Pacific (Tokyo) region.
 
 ### 2. Problem Statement
 ### What’s the Problem?
@@ -55,7 +55,7 @@ This project follows an Agile Scrum methodology divided into 4 key phases:
 
 **Technical Requirements**
 - **Core Stack**: Python 3.12 (Backend), TypeScript/React (Frontend), AWS CDK v2 (IaC).
-- **AI/ML Requirements**: Access to Anthropic Claude 3 Haiku and Claude 3.5 Sonnet via Amazon Bedrock.
+- **AI/ML Requirements**: Access to Anthropic Claude 3 Haiku, Claude 3.5 Sonnet, Claude 3 Sonnent and Amazon Titan Embeddings G1 via Amazon Bedrock.
 - **Database**: PostgreSQL with `unaccent` extension for Vietnamese language support; CSV data imports for initialization.
 - **External Dependencies**: Meta (Facebook) Developer Account for Graph API v18.0; Verified Amazon SES identity.
 
@@ -73,7 +73,7 @@ You can find the budget estimation on the [AWS Pricing Calculator](https://calcu
 ### Infrastructure Costs
 - **AWS Services:**
     - **Amazon VPC**: $20.45/month (2 Interface Endpoints for security).
-    - **Amazon Bedrock**: $9.08/month (Tokens for Claude 3 Haiku/Sonnet models).
+    - **Amazon Bedrock**: $9.08/month (Tokens for Claude 3 Haiku/Sonnet and Claude 3.5 Sonnent models).
     - **Amazon RDS**: $5.83/month (db.t3.micro, 20GB storage).
     - **Amazon Cognito**: $0.50/month (10 MAU).
     - **Amazon SQS**: $0.50/month (1M requests).

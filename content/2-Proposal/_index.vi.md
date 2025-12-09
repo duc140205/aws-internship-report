@@ -11,7 +11,7 @@ pre: " <b> 2. </b> "
 [![Download MeetAssist Chatbot Proposal](https://img.shields.io/badge/MeetAssist_Chatbot_Proposal-Click_Here-0056D2?style=for-the-badge&logo=google-docs&logoColor=white)](/images/2-Proposal/Proposal_Template.docx)
 
 ### 1. Tóm tắt Dự án (Executive Summary)
-Chatbot Lên Lịch Thông Minh trên AWS là một giải pháp hoàn toàn không máy chủ (serverless) được thiết kế để tự động hóa việc đặt lịch hẹn và hỗ trợ khách hàng qua Facebook Messenger. Hệ thống tích hợp các Mô hình Ngôn ngữ Lớn (LLMs) trên Amazon Bedrock (Claude 3.5 Sonnet, Claude 3 Haiku) sử dụng cơ chế Text-to-SQL để truy vấn/thực thi SQL trên cơ sở dữ liệu PostgreSQL. Giải pháp đảm bảo phản hồi chính xác theo ngữ cảnh, giảm 80–90% khối lượng công việc lên lịch thủ công trong khi vẫn duy trì bảo mật cấp doanh nghiệp tại khu vực Châu Á Thái Bình Dương (Tokyo).
+Chatbot Lên Lịch Thông Minh trên AWS là một giải pháp hoàn toàn không máy chủ (serverless) được thiết kế để tự động hóa việc đặt lịch hẹn và hỗ trợ khách hàng qua Facebook Messenger. Hệ thống tích hợp các Mô hình Ngôn ngữ Lớn (LLMs) trên Amazon Bedrock (Claude 3.5 Sonnet, Claude 3 Haiku, Claude 3 Sonnet) sử dụng cơ chế Text-to-SQL để truy vấn/thực thi SQL trên cơ sở dữ liệu PostgreSQL. Giải pháp đảm bảo phản hồi chính xác theo ngữ cảnh, giảm 80–90% khối lượng công việc lên lịch thủ công trong khi vẫn duy trì bảo mật cấp doanh nghiệp tại khu vực Châu Á Thái Bình Dương (Tokyo).
 
 ### 2. Vấn đề & Giải pháp
 ### Vấn đề là gì?
@@ -55,7 +55,7 @@ Dự án này tuân theo phương pháp Agile Scrum chia thành 4 giai đoạn c
 
 **Yêu cầu Kỹ thuật**
 - **Công nghệ Cốt lõi**: Python 3.12 (Backend), TypeScript/React (Frontend), AWS CDK v2 (IaC).
-- **Yêu cầu AI/ML**: Truy cập Anthropic Claude 3 Haiku và Claude 3.5 Sonnet qua Amazon Bedrock.
+- **Yêu cầu AI/ML**: Truy cập Anthropic Claude 3 Haiku, Claude 3.5 Sonnet, Claude 3 Sonnet và Amazon Titan Embeddings G1 qua Amazon Bedrock.
 - **Cơ sở dữ liệu**: PostgreSQL với extension `unaccent` để hỗ trợ tiếng Việt; nhập dữ liệu CSV để khởi tạo.
 - **Phụ thuộc bên ngoài**: Tài khoản Meta (Facebook) Developer cho Graph API v18.0; Định danh Amazon SES đã xác minh.
 
@@ -73,7 +73,7 @@ Bạn có thể xem chi tiết ước tính ngân sách trên [Công cụ Tính 
 ### Chi phí Hạ tầng
 - **Dịch vụ AWS:**
     - **Amazon VPC**: $20.45/tháng (2 Interface Endpoints để bảo mật).
-    - **Amazon Bedrock**: $9.08/tháng (Token cho các mô hình Claude 3 Haiku/Sonnet).
+    - **Amazon Bedrock**: $9.08/tháng (Token cho các mô hình Claude 3 Haiku/Sonnet và Claude 3.5 Sonnent).
     - **Amazon RDS**: $5.83/tháng (db.t3.micro, 20GB lưu trữ).
     - **Amazon Cognito**: $0.50/tháng (10 người dùng hoạt động hàng tháng - MAU).
     - **Amazon SQS**: $0.50/tháng (1 triệu yêu cầu).
